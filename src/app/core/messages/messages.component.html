@@ -1,0 +1,19 @@
+<ng-container class="msg-error" *ngIf="this.errors">
+  <ng-container *ngFor="let error of this.errors">
+    <ng-container *ngIf="this.showMessagesError">
+      <div style="width:20em; height:20e;">
+        Something happened...
+      </div>
+    </ng-container>
+  </ng-container>
+</ng-container>
+
+<ng-container class="msg-error" *ngIf="this.success">
+  <ng-container *ngFor="let suc of success">
+     <ng-container *ngIf="this.showMessagesSuccess">
+       <div style="width:20em; height:20e;">
+        Successful message..
+       </div>
+     </ng-container>
+  </ng-container>
+</ng-container>

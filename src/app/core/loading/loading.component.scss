@@ -1,0 +1,24 @@
+.loader {
+    display: inline-block;
+    color: rgb(0, 0, 0);
+  }
+  .loader::before {
+    content: '';
+    position: absolute;
+    width: 4em;
+    height: 4em;
+    border-radius: 50%;
+    border: 5px solid #FFF;
+    border-bottom-color: #095fff;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  } 
