@@ -9,24 +9,28 @@
         <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
             <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
                 <ul>
-                    <li nz-menu-item nzMatchRouter>
-                        <a routerLink="/welcome">General</a>
+
+                    <li nz-menu-item nzMatchRouter style="text-decoration:none;">
+                        <a routerLink="/welcome">Dashboard</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
-                        <a>Users</a>
+                        <a routerLink="/students">Alumnos</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
+                        <a routerLink="/dashboard">Metrics</a>
+                    </li>
+                    <!-- <li nz-menu-item nzMatchRouter>
                         <a>Metrics</a>
-                    </li>
+                    </li> -->
                 </ul>
             </li>
-            <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
+            <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">
                 <ul>
                     <li nz-menu-item nzMatchRouter>
                         <a>Basic Form</a>
                     </li>
                 </ul>
-            </li>
+            </li> -->
         </ul>
     </nz-sider>
     <nz-layout>
@@ -45,9 +49,9 @@
                 <div class="col">
                     <router-outlet></router-outlet>
                 </div>
-                <div class="col">
+                <!-- <div class="col">
                     <router-outlet name="mensajes"></router-outlet>
-                </div>
+                </div> -->
             </div>
         </nz-content>
     </nz-layout>

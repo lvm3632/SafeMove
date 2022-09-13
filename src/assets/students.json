@@ -1,0 +1,8 @@
+{
+    "data": [
+        { "idStudent": "5002", "fullName": "Name 1", "area": "Biblioteca", "room": "3307" },
+        { "idStudent": "5003", "fullName": "Name 2", "area": "Edificio 1", "room": "3308" },
+        { "idStudent": "5004", "fullName": "Name 3", "area": "Edificio 2", "room": "3309" }, { "idStudent": "5001", "fullName": "None", "area": "Biblioteca", "room": "3307" },
+        { "idStudent": "5005", "fullName": "Name 3", "area": "Edificio 3", "room": "33010" }
+    ]
+}
