@@ -1,1 +1,65 @@
-<p>Info de estudiante :1</p>
+<nz-space nzDirection="vertical">
+    <nz-card *nzSpaceItem style="width: 99.5em; padding:0;">
+        <h3>Información</h3>
+        <ng-container *ngIf="(this.students$ | async) as data; else loading">
+            <nz-table #basicTable [nzData]="dataSet" [nzFrontPagination]="false">
+                <thead>
+                    <tr>
+                        <th>
+                            <p>Matrícula</p>
+                        </th>
+                        <td>
+                            <p>{{data.idStudent}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Nombre</p>
+                        </th>
+                        <td>
+                            <p>{{data.fullName}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Estado</p>
+                        </th>
+                        <td>
+                            <p>A salvo</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Área</p>
+                        </th>
+                        <td>
+                            <p>{{data.area}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Salón</p>
+                        </th>
+                        <td>
+                            <p>{{data.room}}</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>
+                            <p>Tiempo de registro</p>
+                        </th>
+                        <td>
+                            <p>2021-04-24 18:00:00</p>
+                        </td>
+                    </tr>
+                </thead>
+            </nz-table>
+        </ng-container>
+    </nz-card>
+</nz-space>
+
+<ng-template #loading>
+    <div style="width:100%; margin-left:6em;">
+        <app-pure-loading></app-pure-loading>
+    </div>
+</ng-template>

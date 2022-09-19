@@ -9,12 +9,7 @@ const routes: Routes = [
     component: ListStudentsComponent,
     children: [
       {
-        path: '',
-        redirectTo: 'info',
-        pathMatch: 'full',
-      },
-      {
-        path: 'info',
+        path: ':idStudent',
         component: StudentComponent,
       },
     ],

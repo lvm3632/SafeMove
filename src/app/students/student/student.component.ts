@@ -10,23 +10,36 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./student.component.scss'],
 })
 export class StudentComponent implements OnInit {
-  students$: Observable<any[]> = new Observable();
+  students$: Observable<IStudent> = new Observable();
 
-  student: IStudent = {
-    idStudent: 'A01636172',
-    fullName: 'Juan Perez',
-    area: 'Biblioteca',
-    room: '3307',
-  };
-
+  dataSet: IStudent[] = [
+    {
+      idStudent: 'A01636172',
+      fullName: 'Juan Perez',
+      area: 'Biblioteca',
+      room: '3307',
+    },
+    {
+      idStudent: 'A01636173',
+      fullName: 'Juan Perez',
+      area: 'Biblioteca',
+      room: '3307',
+    },
+  ];
   constructor(
     private studentService: StudentsService,
     private router: Router,
     private route: ActivatedRoute
-  ) {}
-  studenIdUrl : string = "";
+  ) { }
+  studenIdUrl: string = '';
   ngOnInit(): void {
-    this.studenIdUrl = this.route.snapshot.params['studentId'];
-    this.students$ = this.studentService.getAllStudents();
+    this.route.paramMap.subscribe(({ params }: any) => {
+      this.studenIdUrl = params.idStudent;
+      this.students$ = this.studentService.getStudentById(this.studenIdUrl);
+    })
+  }
+
+  getStudent(data: IStudent) {
+    console.log(data);
   }
 }

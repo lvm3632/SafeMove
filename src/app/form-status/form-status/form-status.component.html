@@ -1,0 +1,38 @@
+<h3 style="margin-bottom:1em;">Formulario</h3>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">ID</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu matrícula">
+            <input id="note" type="text" nz-input formControlName="note" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">Nombre</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu nombre">
+            <input id="note" type="text" nz-input formControlName="note" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="gender">Área</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Selecciona una area">
+            <nz-select id="gender" formControlName="gender" nzPlaceHolder="Selecciona una área" (ngModelChange)="genderChange($event)">
+                <nz-option nzValue="edificio1" nzLabel="Edificio 1"></nz-option>
+                <nz-option nzValue="edificio2" nzLabel="Edificio 2"></nz-option>
+                <nz-option nzValue="edificio3" nzLabel="Edificio 3"></nz-option>
+                <nz-option nzValue="edificio4" nzLabel="Edificio 4"></nz-option>
+                <nz-option nzValue="otro" nzLabel="Otro"></nz-option>
+            </nz-select>
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-label [nzSpan]="5" nzFor="note">Salón (Opcional)</nz-form-label>
+        <nz-form-control [nzSpan]="12">
+            <input id="note" type="text" nz-input formControlName="note" />
+        </nz-form-control>
+    </nz-form-item>
+    <nz-form-item>
+        <nz-form-control [nzSpan]="16" [nzOffset]="0">
+            <button nz-button nzType="primary" [nzSize]="'large'">Estoy bien</button>
+        </nz-form-control>
+    </nz-form-item>
+</form>

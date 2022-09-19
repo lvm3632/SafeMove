@@ -1,6 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, first, delay, retry, shareReplay } from 'rxjs';
+import { IStudent } from '../../models/students.model.interface';
 
 
 
@@ -16,8 +17,8 @@ export class StudentsService {
         return [];
       }),
       map((data: any) => {
-        console.log(data, "Data");
-        return data["data"];
+        console.log(data, 'Data');
+        return data['data'];
       }),
       first(),
       delay(0),
@@ -25,4 +26,21 @@ export class StudentsService {
       shareReplay()
     );
   }
+
+  getStudentById(idStudent: string) {
+    return this.http.get<any[]>(`./assets/students.json`).pipe(
+      catchError((err: any) => {
+        return [];
+      }),
+      map((data: any) =>
+        data['data'].find((student: IStudent) => student.idStudent == idStudent)
+      ),
+      first(),
+      delay(250),
+      retry(3),
+      shareReplay()
+    );
+  }
+
+
 }

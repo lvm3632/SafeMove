@@ -13,29 +13,43 @@ export class MetricsStudentsComponent implements OnInit {
     this.chartOptions = {
       series: [
         {
-          name: 'My-series',
-          data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+          name: 'Cantidad',
+          data: [24, 12],
         },
       ],
       chart: {
         height: 350,
         type: 'bar',
+        events: {},
       },
-      title: {
-        text: 'My First Angular Chart',
+      colors: ['#11A100', '#304758'],
+      plotOptions: {
+        bar: {
+          columnWidth: '50%',
+          distributed: true,
+        },
+      },
+      dataLabels: {
+        enabled: true,
+      },
+      legend: {
+        show: true,
+      },
+      grid: {
+        show: true,
       },
       xaxis: {
         categories: [
-          'Jan',
-          'Feb',
-          'Mar',
-          'Apr',
-          'May',
-          'Jun',
-          'Jul',
-          'Aug',
-          'Sep',
+          ['Resguardados'],
+          ['Pendiente'],
         ],
+        labels: {
+          style: {
+            colors: ['#444', '#444'],
+            fontSize: '14px',
+            fontWeight: 600,
+          },
+        },
       },
     };
   }
