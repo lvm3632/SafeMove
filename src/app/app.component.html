@@ -1,5 +1,6 @@
 <nz-layout class="app-layout">
-    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed" [nzTrigger]="null">
+    <nz-sider class="menu-sidebar" nzCollapsible nzWidth="256px" nzBreakpoint="md" [(nzCollapsed)]="isCollapsed"
+        [nzTrigger]="null">
         <div class="sidebar-logo">
             <a href="https://ng.ant.design/" target="_blank">
                 <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">
@@ -17,7 +18,7 @@
                         <a routerLink="/students">Alumnos</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
-                        <a routerLink="/dashboard">Metrics</a>
+                        <a routerLink="/dashboard">Métricas</a>
                     </li>
                     <!-- <li nz-menu-item nzMatchRouter>
                         <a>Metrics</a>
@@ -32,16 +33,61 @@
                 </ul>
             </li> -->
         </ul>
+
+
+        <div nz-row nzJustify="center">
+            <div nz-col style="margin-top:2em;">
+                <h2 nz-typography nzType="success">Emergencia</h2>
+                <h2 style="color:white; text-align: center;">{{this.actualTime}}</h2>
+            </div>
+        </div>
     </nz-sider>
     <nz-layout>
         <nz-header>
             <div class="app-header">
-                <span class="header-trigger" (click)="isCollapsed = !isCollapsed">
-            <i class="trigger"
-               nz-icon
-               [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"
-            ></i>
-        </span>
+
+                <div nz-row>
+                    <div nz-col nzSpan="8">
+                        <span class="header-trigger" (click)="isCollapsed = !isCollapsed" style="width: 100% !important;">
+                            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i> 
+                        </span>
+                    </div>
+                    <div nz-col nzSpan="7" nzOffset="7">
+                     
+                    </div>
+                    <div nz-col nzSpan="8" nzOffset="8">
+
+                        <span style="width: 100%; text-align:right;">
+                            <nz-space [nzSize]="10">
+                                <button (click)="this.start()" *nzSpaceItem  nz-button nzType="primary" [nzSize]="this.size"
+                                [disabled]="this.stopTimer"
+                                style="padding:0.5em; width: 6.5em; height: 4m;">
+                                    <div>
+                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>
+                                        <span>&nbsp;</span>
+                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>
+                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>
+
+                                    </div>
+                                  </button>
+                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size" 
+                                  (click)="this.pause()"
+                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton" 
+                                  style="padding:0.5em; width: 6.5em; height: 3.5m;">
+                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>
+                                  Pause     
+                                </button>
+                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size" 
+                                (click)="this.stop()"
+                                [disabled]="!this.pauseButton" 
+                                style="padding:0.5em; width: 6.5em; height: 3.5m;">
+                                <span nz-icon nzType="save" nzTheme="outline"></span>
+                                Detener
+                              </button>
+                            </nz-space>
+                       </span>
+                    </div>
+                  </div>
             </div>
         </nz-header>
         <nz-content>

@@ -15,6 +15,11 @@ import { MessagesComponent } from './messages/messages.component';
 import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgApexchartsModule } from 'ng-apexcharts';
+import { NzButtonModule } from 'ng-zorro-antd/button';
+import { NzGridModule } from 'ng-zorro-antd/grid';
+import { NzSpaceModule } from 'ng-zorro-antd/space';
+import { ClockService } from './services/clock.service';
+import { NzTypographyModule } from 'ng-zorro-antd/typography';
 
 @NgModule({
   declarations: [MessagesComponent, LoadingComponent],
@@ -27,6 +32,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FormsModule,
     BrowserAnimationsModule,
     NgApexchartsModule,
+    NzButtonModule,
+    NzGridModule,
+    NzSpaceModule,
+    NzTypographyModule
   ],
   exports: [
     IconsProviderModule,
@@ -37,6 +46,10 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     FormsModule,
     BrowserAnimationsModule,
     NgApexchartsModule,
+    NzButtonModule,
+    NzGridModule,
+    NzSpaceModule,
+    NzTypographyModule
   ],
   providers: [
     ClonerService,
@@ -44,6 +57,7 @@ import { NgApexchartsModule } from 'ng-apexcharts';
     ConfigService,
     MessagesService,
     LoadingService,
+    ClockService
   ],
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {

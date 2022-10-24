@@ -13,10 +13,17 @@ export class FormStatusComponent implements OnInit {
 
   ngOnInit(): void {
      this.validateForm = this.fb.group({
-       note: [null, [Validators.required]],
+       name: [null, [Validators.required]],
        gender: [null, [Validators.required]],
+       note: [null]
      });
+
+    this.validateForm.valueChanges.subscribe((data:any) => {
+      console.log(data, "info");
+    })
   }
+  public customPatterns = { 'S': { pattern: new RegExp('^(?:[A-Z][^\s]*\s?)+$')} };
+
 
   submitForm() {}
 

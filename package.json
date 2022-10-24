@@ -27,6 +27,7 @@
     "clone": "^2.1.2",
     "ng-apexcharts": "^1.7.1",
     "ng-zorro-antd": "^13.4.0",
+    "ngx-mask": "13.1.15",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

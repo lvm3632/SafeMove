@@ -1,15 +1,21 @@
 <h3 style="margin-bottom:1em;">Formulario</h3>
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
+<form nz-form  [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">ID</nz-form-label>
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">ID / Matrícula</nz-form-label>
         <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu matrícula">
-            <input id="note" type="text" nz-input formControlName="note" />
+            <input id="note" placeholder="Ejemplo: A01636172" type="text" 
+            mask="A{8}"
+            nz-input formControlName="note" />
+            <br>
+            <!-- CHF <input matInput mask="separator.2"> -->
+            <!-- <input matInput type="text" mask="IP"  /> -->
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">Nombre</nz-form-label>
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Nombre</nz-form-label>
         <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu nombre">
-            <input id="note" type="text" nz-input formControlName="note" />
+            <input placeholder="Ejemplo: Juan pérez" id="name" type="text" nz-input formControlName="name"
+            />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
@@ -25,9 +31,12 @@
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzFor="note">Salón (Opcional)</nz-form-label>
+        <nz-form-label 
+        [nzSpan]="5" nzFor="note">Salón (Opcional)</nz-form-label>
         <nz-form-control [nzSpan]="12">
-            <input id="note" type="text" nz-input formControlName="note" />
+            <input 
+            mask="0000"
+            placeholder="Ejemplo: 3306" id="note" type="text" nz-input formControlName="note" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>

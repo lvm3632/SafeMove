@@ -7,6 +7,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzButtonModule } from 'ng-zorro-antd/button';
+
+import { NgxMaskModule, IConfig } from 'ngx-mask'
+
+export const options: Partial<IConfig> = {
+  thousandSeparator: '@'
+};
+
+
 @NgModule({
   declarations: [FormStatusComponent],
   imports: [
@@ -18,6 +26,8 @@ import { NzButtonModule } from 'ng-zorro-antd/button';
     NzInputModule,
     NzSelectModule,
     NzButtonModule,
+    NgxMaskModule.forRoot(options),
+
   ],
   exports: [FormStatusComponent],
 })
