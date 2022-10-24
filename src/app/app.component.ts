@@ -20,10 +20,7 @@ export class AppComponent implements OnInit{
 
   constructor(private clockService: ClockService){}
 
-
-
-  ngOnInit(){
-  }
+  ngOnInit(){}
 
   start(){
     this.stopTimer = true;
@@ -31,6 +28,7 @@ export class AppComponent implements OnInit{
     this.detenerBtn = false;
     this.timerUnsuscribe = this.clockService.clock().subscribe((data:any) => {
       this.actualTime = data;
+      this.clockService.start();
       console.log(data)
     })
   }
@@ -50,6 +48,8 @@ export class AppComponent implements OnInit{
       this.actualTime = "00:00:00";
       this.detenerBtn = false;
       this.pauseButton = false;
+      this.clockService.end();
+
     }
   }
 }

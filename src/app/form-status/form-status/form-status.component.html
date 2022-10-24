@@ -1,4 +1,4 @@
-<h3 style="margin-bottom:1em;">Formulario</h3>
+    <h3 style="margin-bottom:1em;">Formulario</h3>
 <form nz-form  [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
     <nz-form-item>
         <nz-form-label [nzSpan]="5" nzRequired nzFor="note">ID / Matrícula</nz-form-label>
@@ -45,3 +45,6 @@
         </nz-form-control>
     </nz-form-item>
 </form>
+
+<div [class.overlay-disabled-none]="activeTimer" class="overlay-disabled">
+</div>

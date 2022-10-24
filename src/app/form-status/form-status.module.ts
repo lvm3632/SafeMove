@@ -9,6 +9,8 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
 import { NgxMaskModule, IConfig } from 'ngx-mask'
+import { ClockService } from '../core/services/clock.service';
+import { EventBusService } from '../core/services/event-bus.service';
 
 export const options: Partial<IConfig> = {
   thousandSeparator: '@'
@@ -27,8 +29,7 @@ export const options: Partial<IConfig> = {
     NzSelectModule,
     NzButtonModule,
     NgxMaskModule.forRoot(options),
-
   ],
-  exports: [FormStatusComponent],
+  exports: [FormStatusComponent]
 })
 export class FormStatusModule {}

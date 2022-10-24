@@ -1,12 +1,27 @@
 import { Injectable } from '@angular/core';
-import { map, Observable, timer, tap} from 'rxjs';
+import { map, Observable, timer, tap, BehaviorSubject} from 'rxjs';
+import { EventBusService } from './event-bus.service';
 
 @Injectable({
   providedIn: 'any'
 })
 export class ClockService {
-  constructor() { }
+  public subjectTimer = new BehaviorSubject<boolean>(false);
+  timerObs$ = this.subjectTimer.asObservable();
+
   timeRemaining: number = 0;
+  constructor(private eventbus: EventBusService) { }
+
+  start(){
+    this.eventbus.trigger("reloj", "reloj", true);
+    this.subjectTimer.next(true);
+  }
+
+  end(){
+    console.log("Termino?");
+    this.eventbus.trigger("reloj", "reloj", false);
+    this.subjectTimer.next(false);
+  }
 
   // toIsoString
   clock(futureDate: string = "2022-10-24T00:00:00.000z"): Observable<string | null> {

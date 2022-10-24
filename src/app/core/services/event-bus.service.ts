@@ -1,11 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Subject, Observable } from 'rxjs';
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class EventBusService {
   //Mediator
-  constructor() {}
+  constructor() {
+    console.log("Event bus creado")
+  }
 
   private eventHandle: { [key: string]: Subject<any> } = {};
 

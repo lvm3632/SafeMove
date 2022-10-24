@@ -1,15 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { EventBusService } from 'src/app/core/services/event-bus.service';
 
 @Component({
   selector: 'app-form-status',
   templateUrl: './form-status.component.html',
-  styleUrls: ['./form-status.component.scss'],
+  styleUrls: ['./form-status.component.scss']
 })
 export class FormStatusComponent implements OnInit {
+  customPatterns = { 'S': { pattern: new RegExp('^(?:[A-Z][^\s]*\s?)+$')} };
   validateForm!: FormGroup;
+  activeTimer:boolean = false;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder,
+    private eventbus: EventBusService) {}
 
   ngOnInit(): void {
      this.validateForm = this.fb.group({
@@ -21,13 +25,20 @@ export class FormStatusComponent implements OnInit {
     this.validateForm.valueChanges.subscribe((data:any) => {
       console.log(data, "info");
     })
-  }
-  public customPatterns = { 'S': { pattern: new RegExp('^(?:[A-Z][^\s]*\s?)+$')} };
 
+    this.eventbus.on("reloj", "reloj").subscribe((data:boolean) => {
+      console.log(data, "Se escucha?")
+      this.activeTimer = data;
+    })  
+  }
 
   submitForm() {}
 
   genderChange($event:any){
+  
     console.log($event, "Form")
   }
+
+
+ 
 }

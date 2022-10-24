@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesModule } from './messages/messages.module';
+import { EventBusService } from './core/services/event-bus.service';
 
 registerLocaleData(en);
 
@@ -23,7 +24,7 @@ registerLocaleData(en);
     NgbModule,
     MessagesModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
