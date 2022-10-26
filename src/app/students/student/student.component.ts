@@ -26,6 +26,7 @@ export class StudentComponent implements OnInit {
       room: '3307',
     },
   ];
+  student: any;
   constructor(
     private studentService: StudentsService,
     private router: Router,
@@ -35,7 +36,7 @@ export class StudentComponent implements OnInit {
   ngOnInit(): void {
     this.route.paramMap.subscribe(({ params }: any) => {
       this.studenIdUrl = params.idStudent;
-      this.students$ = this.studentService.getStudentById(this.studenIdUrl);
+      this.student = this.studentService.getStudentById(this.studenIdUrl);
     })
   }
 

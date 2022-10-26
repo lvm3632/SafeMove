@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Subject, Observable } from 'rxjs';
+import { Subject, Observable, ReplaySubject } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -9,7 +9,7 @@ export class EventBusService {
     console.log("Event bus creado")
   }
 
-  private eventHandle: { [key: string]: Subject<any> } = {};
+  private eventHandle: { [key: string]: ReplaySubject<any> } = {};
 
   private parseKey(modCode: string, event: string): string {
     return modCode + '.' + event;
@@ -28,13 +28,13 @@ export class EventBusService {
   on<T>(modCode: string, event: string): Observable<T | any> {
     const key = this.parseKey(modCode, event);
     if (!(key in this.eventHandle)) {
-      this.eventHandle[key] = new Subject<T>();
+      this.eventHandle[key] = new ReplaySubject<T>();
     }
     return this.eventHandle[key];
   }
 
   trigger<T>(modCode: string, event: string, data: T) {
-    console.log(event, modCode, data, 'from trigger');
+   // console.log(event, modCode, data, 'from trigger');
     const key = this.parseKey(modCode, event);
     if (key in this.eventHandle) {
       this.eventHandle[key].next(data);

@@ -2,14 +2,33 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { catchError, map, first, delay, retry, shareReplay } from 'rxjs';
 import { IStudent } from '../../models/students.model.interface';
-
-
+import { EventBusService } from './event-bus.service';
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class StudentsService {
-  constructor(private http: HttpClient) {}
+  personas: IStudent[] = [];
+  lastEvent: IStudent[] = [];
+
+  constructor(private http: HttpClient,
+    private eventbus: EventBusService) {}
+
+  add(person: IStudent, tiempo?: string) {
+    this.personas.push(person);
+  }
+
+  clear(){
+    this.personas.length = 0;
+  }
+
+  copy(...personas: IStudent[]){
+    this.lastEvent = [...personas];
+  }
+
+  getPeople(){
+    return this.personas;
+  }
 
   getAllStudents() {
     return this.http.get<any[]>(`./assets/students.json`).pipe(
@@ -28,6 +47,10 @@ export class StudentsService {
   }
 
   getStudentById(idStudent: string) {
+    return this.personas.find((student: IStudent) => student.idStudent == idStudent);
+  }
+
+  getStudentByIdAssets(idStudent: string) {
     return this.http.get<any[]>(`./assets/students.json`).pipe(
       catchError((err: any) => {
         return [];

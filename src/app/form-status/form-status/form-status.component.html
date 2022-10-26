@@ -1,50 +1,61 @@
-    <h3 style="margin-bottom:1em;">Formulario</h3>
-<form nz-form  [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
+<h3 style="margin-bottom:1em;">Formulario</h3>
+<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzRequired nzFor="note">ID / Matrícula</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu matrícula">
-            <input id="note" placeholder="Ejemplo: A01636172" type="text" 
-            mask="A{8}"
-            nz-input formControlName="note" />
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="idStudent">ID / Matrícula</nz-form-label>
+        <nz-form-control nzHasFeedback [nzErrorTip]="matriculaErrorTpl" [nzSpan]="12">
+            <input id="idStudent" placeholder="Ejemplo: A01636172" type="text" mask="A{9}" nz-input
+                formControlName="idStudent" />
             <br>
             <!-- CHF <input matInput mask="separator.2"> -->
             <!-- <input matInput type="text" mask="IP"  /> -->
         </nz-form-control>
+        <ng-template #matriculaErrorTpl let-control>
+
+            <ng-container *ngIf="
+            (validateForm.get('idStudent')?.dirty && validateForm.get('idStudent')?.touched)
+          ">
+                <ng-container *ngIf="control.hasError('pattern')" style="color:blue;"><p style="color: rgb(15, 85, 120); font-weight: 600;">Ingresa tu mátricula correctamente</p></ng-container>
+            </ng-container>
+            <ng-container *ngIf="control.hasError('required')">Ingresa tu matrícula</ng-container>
+        </ng-template>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzRequired nzFor="name">Nombre</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu nombre">
-            <input placeholder="Ejemplo: Juan pérez" id="name" type="text" nz-input formControlName="name"
-            />
+        <nz-form-label [nzSpan]="5" nzRequired nzFor="fullName">Nombre</nz-form-label>
+        <nz-form-control [nzSpan]="12" nzErrorTip="Ingresa tu nombre" nzHasFeedback>
+            <input placeholder="Ejemplo: Juan pérez" id="fullName" type="text" nz-input formControlName="fullName" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label [nzSpan]="5" nzFor="gender">Área</nz-form-label>
-        <nz-form-control [nzSpan]="12" nzErrorTip="Selecciona una area">
-            <nz-select id="gender" formControlName="gender" nzPlaceHolder="Selecciona una área" (ngModelChange)="genderChange($event)">
-                <nz-option nzValue="edificio1" nzLabel="Edificio 1"></nz-option>
-                <nz-option nzValue="edificio2" nzLabel="Edificio 2"></nz-option>
-                <nz-option nzValue="edificio3" nzLabel="Edificio 3"></nz-option>
-                <nz-option nzValue="edificio4" nzLabel="Edificio 4"></nz-option>
+        <nz-form-label [nzSpan]="5" nzFor="area" nzRequired>Área</nz-form-label>
+        <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Selecciona una area">
+            <nz-select id="area" formControlName="area" nzPlaceHolder="Selecciona una área"
+                (ngModelChange)="areaChange($event)">
+                <nz-option nzValue="Edificio 1" nzLabel="Edificio 1"></nz-option>
+                <nz-option nzValue="Edificio 2" nzLabel="Edificio 2"></nz-option>
+                <nz-option nzValue="Edificio 3" nzLabel="Edificio 3"></nz-option>
+                <nz-option nzValue="Edificio 4" nzLabel="Edificio 4"></nz-option>
                 <nz-option nzValue="otro" nzLabel="Otro"></nz-option>
             </nz-select>
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
-        <nz-form-label 
-        [nzSpan]="5" nzFor="note">Salón (Opcional)</nz-form-label>
-        <nz-form-control [nzSpan]="12">
-            <input 
-            mask="0000"
-            placeholder="Ejemplo: 3306" id="note" type="text" nz-input formControlName="note" />
+        <nz-form-label [nzSpan]="5" nzFor="room">Salón (Opcional)</nz-form-label>
+        <nz-form-control nzHasFeedback [nzSpan]="12">
+            <input mask="0000" placeholder="Ejemplo: 3306" id="room" type="text" nz-input formControlName="room" />
         </nz-form-control>
     </nz-form-item>
     <nz-form-item>
         <nz-form-control [nzSpan]="16" [nzOffset]="0">
-            <button nz-button nzType="primary" [nzSize]="'large'">Estoy bien</button>
+            <button [disabled]="this.clicked" nz-button nzType="primary" [nzSize]="'large'">Estoy bien</button>
         </nz-form-control>
     </nz-form-item>
 </form>
 
-<div [class.overlay-disabled-none]="activeTimer" class="overlay-disabled">
+<div [class.overlay-disabled-none]="this.activeTimer" class="overlay-disabled">
 </div>
+
+<ng-container *ngIf="this.loading">
+    <div class="overlay-loading">
+        <app-pure-loading></app-pure-loading>
+    </div>
+</ng-container>

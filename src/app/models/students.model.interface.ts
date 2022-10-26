@@ -3,6 +3,7 @@ export interface IStudent  {
     fullName: string, // Juan Perez
     area: string,   // Edificio 3
     room: string    // 3307
+    time?: string;
 }
 
 // Por salones

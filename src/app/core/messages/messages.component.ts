@@ -30,7 +30,7 @@ export class MessagesComponent implements OnInit {
       setTimeout(() => {
         this.showMessagesError = true;
         this.onCloseError();
-      }, 6000);
+      }, 3000);
       this.showMessagesError = true;
     });
     this.success$.subscribe((data) => {
@@ -40,7 +40,7 @@ export class MessagesComponent implements OnInit {
       setTimeout(() => {
         this.showMessagesSuccess = true;
         this.onCloseSuccess();
-      }, 6000);
+      }, 3000);
       this.showMessagesSuccess = true;
     });
   }

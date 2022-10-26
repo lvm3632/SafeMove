@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { NzButtonSize } from 'ng-zorro-antd/button';
 import { Subscription } from 'rxjs';
 import { ClockService } from './core/services/clock.service';
+import { EventBusService } from './core/services/event-bus.service';
+import { StudentsService } from './core/services/students.service';
 
 @Component({
   selector: 'app-root',
@@ -18,7 +20,9 @@ export class AppComponent implements OnInit{
   timerUnsuscribe = new Subscription();
   detenerBtn: boolean = false;
 
-  constructor(private clockService: ClockService){}
+  constructor(private clockService: ClockService, 
+    private studentsService:StudentsService,
+    private eventbus: EventBusService){}
 
   ngOnInit(){}
 
@@ -28,8 +32,8 @@ export class AppComponent implements OnInit{
     this.detenerBtn = false;
     this.timerUnsuscribe = this.clockService.clock().subscribe((data:any) => {
       this.actualTime = data;
+      this.eventbus.trigger("tiempo", "tiempo",  this.actualTime);
       this.clockService.start();
-      console.log(data)
     })
   }
 
@@ -43,13 +47,16 @@ export class AppComponent implements OnInit{
   stop(){
     this.timerUnsuscribe.unsubscribe();
     if(this.detenerBtn){
-      console.log("Detener")
       this.clockService.timeRemaining = 0;
       this.actualTime = "00:00:00";
       this.detenerBtn = false;
       this.pauseButton = false;
       this.clockService.end();
-
+      console.log(this.studentsService.getPeople(), "Personas al detener");
+      this.studentsService.copy(...this.studentsService.getPeople());
+      setTimeout(() => {
+        this.studentsService.clear();
+      }, 3000)
     }
   }
 }

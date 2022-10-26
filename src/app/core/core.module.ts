@@ -57,7 +57,6 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
     ConfigService,
     MessagesService,
     LoadingService,
-    ClockService
   ],
 })
 export class CoreModule extends EnsureModuleLoadedOnceGuard {

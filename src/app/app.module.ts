@@ -11,6 +11,9 @@ import { SharedModule } from './shared/shared.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { MessagesModule } from './messages/messages.module';
 import { EventBusService } from './core/services/event-bus.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { StudentsService } from './core/services/students.service';
+import { ClockService } from './core/services/clock.service';
 
 registerLocaleData(en);
 
@@ -24,7 +27,7 @@ registerLocaleData(en);
     NgbModule,
     MessagesModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService, NzMessageService, StudentsService, ClockService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

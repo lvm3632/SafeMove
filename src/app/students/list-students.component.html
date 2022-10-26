@@ -1,11 +1,16 @@
 <div style="width: 100%;">
-    <nz-space nzDirection="vertical">
-        <nz-card *nzSpaceItem style="width: 99.5em; padding:0;">
-            <h3>Alumnos</h3>
-            <nz-table #basicTable [nzData]="dataSet">
+    <nz-space nzDirection="vertical" style="width: 100%;">
+        <nz-card *nzSpaceItem style="width: 100%; padding:0; text-align: center;">
+            <h3 style="text-align: left;">Alumnos
+            </h3>
+
+            <nz-table #basicTable [nzData]="this.studentService.personas">
                 <tbody>
                     <tr *ngFor="let data of basicTable.data" (click)="this.getStudent(data)">
-                        <td>{{data.fullName + ' - ' + data.idStudent}}</td>
+                      
+                         <ng-container *ngIf="basicTable && basicTable.data.length; else shell">
+                        <td>{{data.fullName + ' - ' + data.idStudent | titlecase}}</td>
+                        </ng-container> 
                     </tr>
                 </tbody>
             </nz-table>
@@ -15,3 +20,14 @@
 <div style="width: 100%;">
     <router-outlet></router-outlet>
 </div>
+
+
+<ng-template #shell>
+    <h1>Not data found.</h1>
+</ng-template> 
+
+
+<!-- {{this.dataSet | json}}
+<div *ngFor="let item of this.studentService.personas">
+    {{item | json}}
+</div> -->

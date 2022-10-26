@@ -34,8 +34,7 @@ export class ClockService {
         return this.msToTime(this.timeRemaining);
         // or 
         // return this.msToTime(this.getMsDiff(futureDate));
-      }),
-      tap(console.log)
+      })
     );
   }
 

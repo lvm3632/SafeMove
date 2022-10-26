@@ -1,15 +1,15 @@
-<nz-space nzDirection="vertical">
-    <nz-card *nzSpaceItem style="width: 99.5em; padding:0;">
+<nz-space nzDirection="vertical" style="width: 100%;">
+   <ng-container *ngIf="this.student">
+    <nz-card *nzSpaceItem style="width:100%; padding:0;">
         <h3>Información</h3>
-        <ng-container *ngIf="(this.students$ | async) as data; else loading">
-            <nz-table #basicTable [nzData]="dataSet" [nzFrontPagination]="false">
+            <nz-table  [nzFrontPagination]="false">
                 <thead>
                     <tr>
                         <th>
                             <p>Matrícula</p>
                         </th>
                         <td>
-                            <p>{{data.idStudent}}</p>
+                            <p>{{student.idStudent | titlecase}}</p>
                         </td>
                     </tr>
                     <tr>
@@ -17,7 +17,7 @@
                             <p>Nombre</p>
                         </th>
                         <td>
-                            <p>{{data.fullName}}</p>
+                            <p>{{student.fullName | titlecase}}</p>
                         </td>
                     </tr>
                     <tr>
@@ -33,7 +33,7 @@
                             <p>Área</p>
                         </th>
                         <td>
-                            <p>{{data.area}}</p>
+                            <p>{{student?.area | titlecase}}</p>
                         </td>
                     </tr>
                     <tr>
@@ -41,7 +41,7 @@
                             <p>Salón</p>
                         </th>
                         <td>
-                            <p>{{data.room}}</p>
+                            <p>{{student?.room || 'N/A'}}</p>
                         </td>
                     </tr>
                     <tr>
@@ -49,13 +49,13 @@
                             <p>Tiempo de registro</p>
                         </th>
                         <td>
-                            <p>2021-04-24 18:00:00</p>
+                            <p>{{student?.timer || 'N/A'}}</p>
                         </td>
                     </tr>
                 </thead>
             </nz-table>
-        </ng-container>
     </nz-card>
+   </ng-container>
 </nz-space>
 
 <ng-template #loading>
