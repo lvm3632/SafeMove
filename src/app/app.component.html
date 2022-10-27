@@ -49,8 +49,8 @@
                         </span>
                     </div>
                     
-                    <div nz-col
-                     [nzXs]="{ span: 0, offset: 0 }"
+                    <div nz-col style="margin-top:0.425em;"
+                     [nzXs]="{ span: 18, offset: 0 }"
                     [nzSm]="{ span: 20, offset: 0 }"
                     [nzMd]="{ span: 20, offset: 0 }"
                     [nzLg]="{ span: 20, offset: 0 }"
@@ -83,7 +83,6 @@
                                 <span nz-icon nzType="save" nzTheme="outline"></span>
                                 Detener
                               </button>
-                              <h2 *nzSpaceItem   style="color: #9cf; text-align: center;">{{this.actualTime}}</h2>
                             </nz-space>
                        </span>
                       
@@ -95,6 +94,7 @@
         <nz-content>
             <div class="inner-content">
                 <div class="col">
+                         <h2   style="color: #1bb; text-align: right; margin-right:0.5em;">{{this.actualTime}}</h2>
                     <router-outlet></router-outlet>
                     <messages></messages>
                 </div>
