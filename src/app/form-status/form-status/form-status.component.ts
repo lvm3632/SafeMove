@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
-import { MessagesService } from 'src/app/core/messages/messages.service';
+import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { EventBusService } from 'src/app/core/services/event-bus.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { concatMap } from 'rxjs/operators';
 import { StudentsService } from 'src/app/core/services/students.service';
-import { ClockService } from 'src/app/core/services/clock.service';
+import { IStudent } from '../../models/students.model.interface';
+import { ClonerService } from '../../core/services/cloner.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 @Component({
   selector: 'app-form-status',
@@ -13,34 +14,34 @@ import { ClockService } from 'src/app/core/services/clock.service';
   styleUrls: ['./form-status.component.scss']
 })
 export class FormStatusComponent implements OnInit {
-  customPatterns = { 'S': { pattern: new RegExp('^(?:[A-Z][^\s]*\s?)+$')} };
   validateForm!: FormGroup;
   activeTimer:boolean = false;
-
-  fullName: FormControl = new FormControl('', [Validators.required]);
-  idStudent: FormControl = new FormControl('', [Validators.required, Validators.pattern("(A|a|l|L)[0-9]{8}")]);
-  room: FormControl = new FormControl('');
-
+  disabledInputs: boolean = false;
+  fullName: FormControl = new FormControl({value: '', disabled: this.disabledInputs}, [Validators.required]);
+  idStudent: FormControl = new FormControl({value: '', disabled: this.disabledInputs}, [Validators.required, Validators.pattern("(A|a|l|L)[0-9]{8}")]);
+  room: FormControl = new FormControl({value: '', disabled: this.disabledInputs});
   actualTimer: string = "";
+  clicked: boolean = false;
+  loading: boolean = false;
+
   constructor(private fb: FormBuilder,
     private eventbus: EventBusService,
-    private messages: MessagesService,
     private message:NzMessageService,
     private students: StudentsService,
-    private clockService: ClockService) {}
+    private cloner: ClonerService,
+    private notification: NzNotificationService) {}
 
   ngOnInit(): void {
      this.validateForm = this.fb.group({
        fullName: this.fullName,
        idStudent: this.idStudent,
        room: this.room,
-       area: ['', Validators.required]
+       area: [{value: '', disabled: this.disabledInputs}, Validators.required]
      });
 
-     
     this.eventbus.on("reloj", "reloj").subscribe((data:boolean) => {
       this.activeTimer = data;
-    })  
+    })
 
     this.eventbus.on("tiempo", "tiempo").subscribe((data:any) => {
       console.log(data, "Tiempo");
@@ -48,19 +49,26 @@ export class FormStatusComponent implements OnInit {
     })
 
   }
-  clicked: boolean = false;
-  loading: boolean = false;
+
   submitForm() {
     console.log(this.validateForm.status, "Form");
     if (this.validateForm.valid) {
       console.log('submit', this.validateForm.value);
       //this.loading = true;
       this.clicked = true;
-      this.startShowMessages(...this.students.personas);
       let obj = this.validateForm.getRawValue();
+      this.startShowMessages(obj);
       obj.timer = this.actualTimer;
       console.log(obj, "tiempo");
-      this.students.add(obj);
+      let index = this.students.personas.findIndex((item:IStudent) => item.idStudent.toLocaleUpperCase() == obj.idStudent.toLocaleUpperCase());
+      if(index != -1){
+        obj.state = true;
+        this.students.personas[index] = this.cloner.deepClone(obj);
+        this.eventbus.trigger("metricas", "metricas", this.students.personas);
+        console.log(obj);
+      }else{
+        this.students.add(obj);
+      }
 
       setTimeout(() => {
         this.validateForm.reset();
@@ -68,7 +76,7 @@ export class FormStatusComponent implements OnInit {
        // this.loading = false;
       },2000);
     } else {
-      Object.values(this.validateForm.controls).forEach(control => {
+      Object.values(this.validateForm.controls).forEach((control : AbstractControl) => {
         if (control.invalid) {
           control.markAsDirty();
           control.updateValueAndValidity({ onlySelf: true });
@@ -78,10 +86,10 @@ export class FormStatusComponent implements OnInit {
   }
 
   areaChange($event:any){
-    console.log($event);  
+    console.log($event);
   }
 
-  startShowMessages(...people: any): void {
+  startShowMessages(obj: IStudent): void {
     this.message
       .loading('Enviando datos ...', { nzDuration: 1500 })
       .onClose!.pipe(
@@ -91,7 +99,23 @@ export class FormStatusComponent implements OnInit {
       .subscribe(() => {
         console.log('All completed!');
        this.eventbus.trigger("people", "people", this.students.personas);
+        let content = obj.idStudent + " - " + obj.fullName.toString() + " - " + obj.area.toString();
+       setTimeout(() => {
+        this.createBasicNotification(content);
+       },1000);
       });
   }
-  
+
+    createBasicNotification(content: string): void {
+    this.notification
+      .blank(
+        'Último registro',
+        `${content}`
+      )
+      .onClick.subscribe(() => {
+        console.log('notification clicked!');
+      });
+  }
+
+
 }

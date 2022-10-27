@@ -4,6 +4,7 @@ export interface IStudent  {
     area: string,   // Edificio 3
     room: string    // 3307
     time?: string;
+    state: boolean; // True: A salvo, False: Pendiente
 }
 
 // Por salones

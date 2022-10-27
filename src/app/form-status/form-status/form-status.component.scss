@@ -8,17 +8,17 @@
 
 
 .overlay-disabled {
-    z-index: 9999;    
+    z-index: 9999;
     position: absolute;
-    width: 60em;
-    height: 32em;
+    width: 82.5%;
+    height: 33em;
     top: 5em;
-    right:10em;
+    right:2vh;
     background-color: rgba(248, 247, 216, 0.7);
 }
 
 .overlay-loading {
-    z-index: 9999;    
+    z-index: 9999;
     position: absolute;
     width: 30em;
     height: 32em;

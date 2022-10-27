@@ -11,21 +11,6 @@ import { ActivatedRoute, Router } from '@angular/router';
 })
 export class StudentComponent implements OnInit {
   students$: Observable<IStudent> = new Observable();
-
-  dataSet: IStudent[] = [
-    {
-      idStudent: 'A01636172',
-      fullName: 'Juan Perez',
-      area: 'Biblioteca',
-      room: '3307',
-    },
-    {
-      idStudent: 'A01636173',
-      fullName: 'Juan Perez',
-      area: 'Biblioteca',
-      room: '3307',
-    },
-  ];
   student: any;
   constructor(
     private studentService: StudentsService,

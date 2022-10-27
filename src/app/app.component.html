@@ -8,11 +8,10 @@
             </a>
         </div>
         <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">
-            <li nz-submenu nzOpen nzTitle="Dashboard" nzIcon="dashboard">
+            <li nz-submenu nzOpen nzTitle="Registro" nzIcon="dashboard">
                 <ul>
-
                     <li nz-menu-item nzMatchRouter style="text-decoration:none;">
-                        <a routerLink="/welcome">Dashboard</a>
+                        <a routerLink="/welcome">Registro</a>
                     </li>
                     <li nz-menu-item nzMatchRouter>
                         <a routerLink="/students">Alumnos</a>
@@ -33,8 +32,6 @@
                 </ul>
             </li> -->
         </ul>
-
-
         <div nz-row nzJustify="center">
             <div nz-col style="margin-top:2em;">
                 <h2 nz-typography nzType="success">Emergencia</h2>
@@ -45,15 +42,13 @@
     <nz-layout>
         <nz-header>
             <div class="app-header">
-
                 <div nz-row>
                     <div nz-col nzSpan="8">
                         <span class="header-trigger" (click)="isCollapsed = !isCollapsed" style="width: 100% !important;">
-                            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i> 
+                            <i class="trigger" nz-icon [nzType]="isCollapsed ? 'menu-unfold' : 'menu-fold'"></i>
                         </span>
                     </div>
                     <div nz-col nzSpan="7" nzOffset="7">
-                     
                     </div>
                     <div nz-col nzSpan="8" nzOffset="8">
 
@@ -70,16 +65,16 @@
 
                                     </div>
                                   </button>
-                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size" 
+                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"
                                   (click)="this.pause()"
-                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton" 
+                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"
                                   style="padding:0.5em; width: 6.5em; height: 3.5m;">
                                   <span nz-icon nzType="pause-circle" nzTheme="outline"></span>
-                                  Pause     
+                                  Pause
                                 </button>
-                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size" 
+                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"
                                 (click)="this.stop()"
-                                [disabled]="!this.pauseButton" 
+                                [disabled]="!this.pauseButton"
                                 style="padding:0.5em; width: 6.5em; height: 3.5m;">
                                 <span nz-icon nzType="save" nzTheme="outline"></span>
                                 Detener

@@ -1,30 +1,73 @@
 <div style="width: 100%;">
-    <nz-space nzDirection="vertical" style="width: 100%;">
-        <nz-card *nzSpaceItem style="width: 100%; padding:0; text-align: center;">
-            <h3 style="text-align: left;">Alumnos
-            </h3>
+  <nz-space nzDirection="vertical" style="width: 100%;">
+    <nz-card *nzSpaceItem style="width: 100%; padding:0; text-align: center;">
+      <h3 style="text-align: left;">Alumnos
+      </h3>
+      <nz-tabset>
 
-            <nz-table #basicTable [nzData]="this.studentService.personas">
+        <nz-tab>
+          <a *nzTabLink nz-tab-link [routerLink]="['/students']" queryParamsHandling="preserve"
+            style="text-decoration: none;"
+          >
+            Lista de alumnos
+          </a>
+             <nz-table #basicTable2 nzShowPagination nzShowSizeChanger [nzData]="this.listPending">
+              <thead>
+                <tr>
+                     <th nzCustomFilter>
+                       Nombre / Matrícula
+                       <nz-filter-trigger [(nzVisible)]="visible" [nzActive]="searchValue.length > 0"
+                         [nzDropdownMenu]="menu">
+                         <span nz-icon nzType="search"></span>
+                       </nz-filter-trigger>
+                     </th>
+                </tr>
+              </thead>
+               <tbody>
+                 <tr *ngFor="let item of basicTable2.data" (click)="this.getStudent(item)">
+                   <ng-container>
+                     <td>{{item.fullName + ' - ' + item.idStudent | titlecase}}</td>
+                   </ng-container>
+                 </tr>
+               </tbody>
+             </nz-table>
+               <nz-dropdown-menu #menu="nzDropdownMenu">
+                 <div class="ant-table-filter-dropdown">
+                   <div class="search-box">
+                     <input type="text" nz-input placeholder="Search name" [(ngModel)]="searchValue" />
+                     <button nz-button nzSize="large" nzType="primary" (click)="searchPending()"
+                       class="search-button">Search</button>
+                     <button nz-button nzSize="large" (click)="resetPending()">Reset</button>
+                   </div>
+                 </div>
+               </nz-dropdown-menu>
+        </nz-tab>
+            <nz-tab>
+              <a *nzTabLink nz-tab-link [routerLink]="['/students']" queryParamsHandling="merge"
+                style="text-decoration: none;">
+                En progreso
+              </a>
+              <nz-table #basicTable nzShowPagination nzShowSizeChanger [nzData]="this.listSafe">
                 <tbody>
-                    <tr *ngFor="let data of basicTable.data" (click)="this.getStudent(data)">
-                      
-                         <ng-container *ngIf="basicTable && basicTable.data.length; else shell">
-                        <td>{{data.fullName + ' - ' + data.idStudent | titlecase}}</td>
-                        </ng-container> 
-                    </tr>
+                  <tr *ngFor="let data of basicTable.data" (click)="this.getStudent(data)">
+                    <ng-container *ngIf="data.state">
+                      <td>{{data.fullName + ' - ' + data.idStudent | titlecase}}</td>
+                    </ng-container>
+                  </tr>
                 </tbody>
-            </nz-table>
-        </nz-card>
-    </nz-space>
+              </nz-table>
+            </nz-tab>
+      </nz-tabset>
+    </nz-card>
+  </nz-space>
 </div>
 <div style="width: 100%;">
-    <router-outlet></router-outlet>
+  <router-outlet></router-outlet>
 </div>
 
-
 <ng-template #shell>
-    <h1>Not data found.</h1>
-</ng-template> 
+  <h1>Not data found.</h1>
+</ng-template>
 
 
 <!-- {{this.dataSet | json}}

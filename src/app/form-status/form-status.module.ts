@@ -7,12 +7,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NzInputModule } from 'ng-zorro-antd/input';
 import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzButtonModule } from 'ng-zorro-antd/button';
-
 import { NgxMaskModule, IConfig } from 'ngx-mask'
-import { ClockService } from '../core/services/clock.service';
-import { EventBusService } from '../core/services/event-bus.service';
 import { SharedModule } from '../shared/shared.module';
-
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 export const options: Partial<IConfig> = {
   thousandSeparator: '@'
 };
@@ -30,8 +27,9 @@ export const options: Partial<IConfig> = {
     NzSelectModule,
     NzButtonModule,
     NgxMaskModule.forRoot(options),
-    SharedModule
+    SharedModule,
   ],
-  exports: [FormStatusComponent]
+  exports: [FormStatusComponent],
+  providers:[NzNotificationService]
 })
 export class FormStatusModule {}

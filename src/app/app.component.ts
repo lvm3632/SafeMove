@@ -20,7 +20,7 @@ export class AppComponent implements OnInit{
   timerUnsuscribe = new Subscription();
   detenerBtn: boolean = false;
 
-  constructor(private clockService: ClockService, 
+  constructor(private clockService: ClockService,
     private studentsService:StudentsService,
     private eventbus: EventBusService){}
 
@@ -53,7 +53,7 @@ export class AppComponent implements OnInit{
       this.pauseButton = false;
       this.clockService.end();
       console.log(this.studentsService.getPeople(), "Personas al detener");
-      this.studentsService.copy(...this.studentsService.getPeople());
+      //this.studentsService.copy(...this.studentsService.getPeople());
       setTimeout(() => {
         this.studentsService.clear();
       }, 3000)

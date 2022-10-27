@@ -14,6 +14,7 @@ import { EventBusService } from './core/services/event-bus.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { StudentsService } from './core/services/students.service';
 import { ClockService } from './core/services/clock.service';
+import { ClonerService } from './core/services/cloner.service';
 
 registerLocaleData(en);
 
@@ -27,7 +28,7 @@ registerLocaleData(en);
     NgbModule,
     MessagesModule,
   ],
-  providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService, NzMessageService, StudentsService, ClockService],
+  providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService, NzMessageService, StudentsService, ClockService, ClonerService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

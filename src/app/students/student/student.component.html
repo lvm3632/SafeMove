@@ -25,7 +25,8 @@
                             <p>Estado</p>
                         </th>
                         <td>
-                            <p>A salvo</p>
+                            <p *ngIf="student.state">A salvo</p>
+                            <p *ngIf="!student.state">Pendiente</p>
                         </td>
                     </tr>
                     <tr>
@@ -33,7 +34,7 @@
                             <p>Área</p>
                         </th>
                         <td>
-                            <p>{{student?.area | titlecase}}</p>
+                            <p>{{student?.area || 'N/A'}}</p>
                         </td>
                     </tr>
                     <tr>
