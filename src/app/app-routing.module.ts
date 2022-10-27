@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
+
   {
     path: 'welcome',
     loadChildren: () =>
@@ -18,9 +18,10 @@ const routes: Routes = [
     loadChildren: () =>
       import('./students/students.module').then((m) => m.StudentsModule),
   },
+  { path: '', pathMatch: 'full', redirectTo: '/welcome' },
   {
     path: '**',
-    redirectTo: 'home',
+    redirectTo: 'welcome',
     pathMatch: 'full',
   },
 ];
