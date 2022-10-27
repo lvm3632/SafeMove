@@ -36,6 +36,47 @@
             <div nz-col style="margin-top:2em;">
                 <h2 nz-typography nzType="success">Emergencia</h2>
                 <h2 style="color:white; text-align: center;">{{this.actualTime}}</h2>
+                  <div nz-col style="margin-top:0.425em;"
+                     [nzXs]="{ span: 22, offset: 0 }"
+                    [nzSm]="{ span: 0, offset: 0 }"
+                    [nzMd]="{ span: 0, offset: 0 }"
+                    [nzLg]="{ span: 0, offset: 0 }"
+                    [nzXl]="{ span: 0, offset: 0 }"
+                    [nzXXl]="{ span: 0, offset: 0 }"
+                    >
+                        <span style="width: 100%; text-align:center; margin-left:2em;">
+                           
+                                <button (click)="this.start()"   nz-button nzType="primary" [nzSize]="this.size"
+                                [disabled]="this.stopTimer"
+                                style="padding:0.5em; width: 6.5em; height: 4m; margin-bottom:1em;">
+                                    <div>
+                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>
+                                        <span>&nbsp;</span>
+                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>
+                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>
+                                    </div>
+                                  </button>
+                                  <br/>
+                                  <button nz-button nzType="primary" [nzSize]="this.size"
+                                  (click)="this.pause()"
+                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"
+                                  style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">
+                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>
+                                  Pause
+                                </button>
+                                  <br/>
+
+                                <button nz-button nzType="primary" [nzSize]="this.size"
+                                (click)="this.stop()"
+                                [disabled]="!this.pauseButton"
+                                style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">
+                                <span nz-icon nzType="save" nzTheme="outline"></span>
+                                Detener
+                              </button>
+                              
+                       </span>
+                      
+                    </div>
             </div>
         </div>
     </nz-sider>
@@ -50,7 +91,7 @@
                     </div>
                     
                     <div nz-col style="margin-top:0.425em;"
-                     [nzXs]="{ span: 18, offset: 0 }"
+                     [nzXs]="{ span: 0, offset: 0 }"
                     [nzSm]="{ span: 20, offset: 0 }"
                     [nzMd]="{ span: 20, offset: 0 }"
                     [nzLg]="{ span: 20, offset: 0 }"
@@ -83,6 +124,8 @@
                                 <span nz-icon nzType="save" nzTheme="outline"></span>
                                 Detener
                               </button>
+
+                                <h2 *nzSpaceItem   style="color: #1bb; text-align: right; margin-right:0.5em;">{{this.actualTime}}</h2>
                             </nz-space>
                        </span>
                       
@@ -94,7 +137,14 @@
         <nz-content>
             <div class="inner-content">
                 <div class="col">
-                         <h2   style="color: #1bb; text-align: right; margin-right:0.5em;">{{this.actualTime}}</h2>
+                     <h2   nz-col
+                     [nzXs]="{ span: 23, offset: 1 }"
+                    [nzSm]="{ span: 0, offset: 0 }"
+                    [nzMd]="{ span: 0, offset: 0 }"
+                    [nzLg]="{ span: 0, offset: 0 }"
+                    [nzXl]="{ span: 0, offset: 0 }"
+                    [nzXXl]="{ span: 0, offset: 0 }"
+                     style="color: #1bb; text-align: left; margin-left:0.5em;"><span style="color:green;">Emergencia actual: </span>{{this.actualTime}}</h2>
                     <router-outlet></router-outlet>
                     <messages></messages>
                 </div>
