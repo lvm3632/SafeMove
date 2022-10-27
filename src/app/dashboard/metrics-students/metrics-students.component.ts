@@ -43,7 +43,7 @@ export class MetricsStudentsComponent implements OnInit {
       colors: ['#11A100', '#304758'],
       plotOptions: {
         bar: {
-          columnWidth: '50%',
+          columnWidth: '100%',
           distributed: true,
         },
       },
