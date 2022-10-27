@@ -24,15 +24,40 @@ export class AppComponent implements OnInit{
     private studentsService:StudentsService,
     private eventbus: EventBusService){}
 
-  ngOnInit(){}
+  ngOnInit(){
+    let bottons: any | null = localStorage.getItem("bottons");
+    bottons = bottons != null ? JSON.parse(bottons || "") : "";
+
+    let timer: any | null = localStorage.getItem("timer");
+    timer = timer != null ? JSON.parse(timer || "") : "";
+
+    if(bottons != ""){
+      this.stopTimer = bottons.stopTimer;
+      this.pauseButton = bottons.pauseButton;
+      this.detenerBtn = bottons.detenerBtn;
+    }
+
+    if(timer != ""){
+      this.actualTime = timer.actualTime;
+      console.log(timer, "TIMER");
+      if(this.stopTimer){
+        this.start();
+      }
+    }
+    console.log(this.actualTime, "tiempo actual");
+  }
 
   start(){
     this.stopTimer = true;
     this.pauseButton = false;
     this.detenerBtn = false;
-    this.timerUnsuscribe = this.clockService.clock().subscribe((data:any) => {
+    localStorage.setItem('bottons', JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
+    console.log(this.actualTime, "TIEMPO ANTES??");
+    this.timerUnsuscribe = this.clockService.clock(this.actualTime).subscribe((data:any) => {
+      console.log(data, this.actualTime, "TIEMPOS")
       this.actualTime = data;
       this.eventbus.trigger("tiempo", "tiempo",  this.actualTime);
+      localStorage.setItem('timer', JSON.stringify({actualTime: this.actualTime}));
       this.clockService.start();
     })
   }
@@ -42,6 +67,7 @@ export class AppComponent implements OnInit{
     this.stopTimer=false;
     this.pauseButton = true;
     this.detenerBtn = true;
+    localStorage.setItem('bottons', JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
   }
 
   stop(){
@@ -49,6 +75,7 @@ export class AppComponent implements OnInit{
     if(this.detenerBtn){
       this.clockService.timeRemaining = 0;
       this.actualTime = "00:00:00";
+      localStorage.setItem('timer', JSON.stringify({actualTime: this.actualTime}));
       this.detenerBtn = false;
       this.pauseButton = false;
       this.clockService.end();
@@ -58,5 +85,6 @@ export class AppComponent implements OnInit{
         this.studentsService.clear();
       }, 3000)
     }
+    localStorage.setItem('bottons', JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
   }
 }

@@ -1,19 +1,40 @@
-<div class="grid">
-    <div class="row">
-        <div class="col d-flex justify-content-center">
+<!-- <div class="grid">
+    <div class="row" nz-row>
+        <div nz-col [nzSm]="{ span: 1, offset: 0}"
+          class="col d-flex justify-content-center responsive-qr">
             <qr-code></qr-code>
         </div>
-        <div class="col  justify-content-center" style="margin-top:2em;">
-
+        <div nz-col class="col justify-content-center" style="margin-top:2em;">
             <app-form-status></app-form-status>
         </div>
     </div>
-    <!-- <div class="row">
-        <div class="col">
-            <div style="text-align: center;">
-                <apx-chart [series]="chartOptions.series" [chart]="chartOptions.chart" [xaxis]="chartOptions.xaxis" [title]="chartOptions.title"></apx-chart>
-            </div>
-        </div>
-    </div> -->
-
-</div>
+</div> -->
+ <div class="gutter-example" style="width: 100%; text-align: center; margin:0;">
+   <div nz-row [nzGutter]="[0, 0]" style="width: 100%; text-align: center;">
+     <div nz-col
+      [nzXs]="{ span: 0, offset: 0 }"
+      [nzSm]="{ span: 0, offset: 0 }"
+       [nzMd]="{ span: 0, offset: 0 }"
+       [nzLg]="{ span: 10, offset: 2 }"
+       [nzXl]="{ span: 12, offset: 0 }"
+       [nzXXl]="{ span: 12, offset: 0 }"
+     class="gutter-row" [nzSpan]="24 / 2" >
+       <div class="grid-config d-flex justify-content-center">
+         <qr-code></qr-code>
+       </div>
+     </div>
+       <div style="width: 100%;" nz-col
+       [nzXs]="{ span: 16, offset: 4 }"
+       [nzSm]="{ span: 17, offset: 7}"
+       [nzMd]="{ span: 16, offset: 8}"
+       [nzLg]="{ span: 10, offset: 2 }"
+       [nzXl]="{ span: 12, offset: 0 }"
+       [nzXXl]="{ span: 12, offset: 0 }"
+       style="width:100%;"
+         class="gutter-row" [nzSpan]="24 / 2">
+         <div class="grid-config ">
+           <app-form-status></app-form-status>
+         </div>
+       </div>
+   </div>
+ </div>

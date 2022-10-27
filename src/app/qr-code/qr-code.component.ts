@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./qr-code.component.scss']
 })
 export class QrCodeComponent implements OnInit {
-
+  urlQR =  window.location.origin + '/welcome';
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

@@ -2,7 +2,9 @@
     <div class="row">
         <div class="col">
             <div class="qrcodeImage">
-                <qrcode [qrdata]="'https://github.com/Cordobo/angularx-qrcode'" [allowEmptyString]="true" [cssClass]="'center'" [colorDark]="'#5f9153'" [colorLight]="'#ffffffff'" [elementType]="'svg'" [errorCorrectionLevel]="'M'" [scale]="1" [title]="'A custom title attribute'"
+                <qrcode [qrdata]="this.urlQR" [allowEmptyString]="true" [cssClass]="'center'" [colorDark]="'#5f9153'"
+                  [colorLight]="'#ffffffff'" [elementType]="'svg'" [errorCorrectionLevel]="'M'" [scale]="1"
+                  [title]="'A custom title attribute'"
                     [width]="400"></qrcode>
             </div>
             <h3 style="text-align: center; ">

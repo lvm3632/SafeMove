@@ -18,7 +18,8 @@ import {
 export class WelcomeComponent implements OnInit {
   @ViewChild('chart') chart!: ChartComponent;
   public chartOptions: any;
-
+  count = 2;
+  array = new Array(this.count);
   constructor() {
     this.chartOptions = {
       series: [

@@ -46,7 +46,9 @@ export class FormStatusComponent implements OnInit {
     this.eventbus.on("tiempo", "tiempo").subscribe((data:any) => {
       console.log(data, "Tiempo");
       this.actualTimer = data;
-    })
+    });
+
+    
 
   }
 
@@ -70,6 +72,7 @@ export class FormStatusComponent implements OnInit {
         this.students.add(obj);
       }
 
+      localStorage.setItem('in-progress', JSON.stringify(this.students.personas));
       setTimeout(() => {
         this.validateForm.reset();
         this.clicked = false;

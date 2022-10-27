@@ -28,10 +28,10 @@ export class ClockService {
     //let clock = new Date().setHours(0, 0, 0, 0);
     //console.log(clock);
     let timeDisplayed = actualDate.split(":");
-    let timerInitial = Number.parseInt(timeDisplayed[0]) * 3600 + Number.parseInt(timeDisplayed[1]) * 60 +Number.parseInt(timeDisplayed[2]);
-
+    let timerInitial = (Number.parseInt(timeDisplayed[0]) * 3600 + Number.parseInt(timeDisplayed[1]) * 60 +Number.parseInt(timeDisplayed[2])) * 1000;
+    this.timeRemaining = timerInitial;
     console.log(timerInitial, "Time initial");
-    return timer(timerInitial, 1000).pipe(
+    return timer(0, 1000).pipe(
       map(() => {
         this.timeRemaining = this.timeRemaining + 1000;
         return this.msToTime(this.timeRemaining);

@@ -1,5 +1,6 @@
-<h3 style="margin-bottom:1em;">Formulario</h3>
-<form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
+<div style="width:100%;">
+<h3 style="margin-bottom:1em; text-align: left; margin-top: 1.325em;">Formulario</h3>
+<form nz-form [formGroup]=" validateForm" (ngSubmit)="submitForm()" [nzLayout]="'vertical'">
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzRequired nzFor="idStudent">ID / Matrícula</nz-form-label>
     <nz-form-control nzHasFeedback [nzErrorTip]="matriculaErrorTpl" [nzSpan]="12">
@@ -30,7 +31,7 @@
   <nz-form-item>
     <nz-form-label [nzSpan]="5" nzFor="area" nzRequired>Área</nz-form-label>
     <nz-form-control nzHasFeedback [nzSpan]="12" nzErrorTip="Selecciona una area">
-      <nz-select id="area" formControlName="area" nzPlaceHolder="Selecciona una área"
+      <nz-select style="text-align: left;" id="area" formControlName="area" nzPlaceHolder="Selecciona una área"
         (ngModelChange)="areaChange($event)">
         <nz-option nzValue="Edificio 1" nzLabel="Edificio 1"></nz-option>
         <nz-option nzValue="Edificio 2" nzLabel="Edificio 2"></nz-option>
@@ -47,7 +48,7 @@
     </nz-form-control>
   </nz-form-item>
   <nz-form-item>
-    <nz-form-control [nzSpan]="16" [nzOffset]="0">
+    <nz-form-control [nzSpan]="4" [nzOffset]="0">
       <button [disabled]="this.clicked || !this.activeTimer" nz-button nzType="primary" [nzSize]="'large'">Estoy
         bien</button>
     </nz-form-control>
@@ -60,3 +61,5 @@
     <app-pure-loading></app-pure-loading>
   </div>
 </ng-container>
+
+</div>

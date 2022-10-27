@@ -8,10 +8,25 @@ import { EventBusService } from './event-bus.service';
   providedIn: 'root',
 })
 export class StudentsService {
-  personas: IStudent[] = [];
+  personas: IStudent[] = [] ;
   static STUDENT_NUMBER = 50;
   constructor(private http: HttpClient,
     private eventbus: EventBusService) {
+     /* let progressData: string | null = localStorage.getItem("in-progress");
+      this.personas = JSON.parse(progressData || "") ?? "";*/
+      let bottons: any | null = localStorage.getItem("bottons");
+      bottons = bottons != null ? JSON.parse(bottons || "") : "";
+        console.log(bottons, this.personas, "entro? af");
+
+      if(!bottons.detenerBtn && !bottons.stopTimer && !bottons.pauseButton){
+        this.personas = [];
+        console.log(bottons, this.personas, "entro?");
+      }else{
+        let people: any | null = localStorage.getItem("in-progress");
+        this.personas = people != null ? JSON.parse(people || "") : [];
+      }
+ 
+
       this.initList();
     }
   initList(){
@@ -46,7 +61,7 @@ export class StudentsService {
   }
 
   clear(){
-    this.personas.length = 0;
+    this.personas = this.personas.filter((item: IStudent) => item.state == false) || [];
   }
 
  /* copy(...personas: IStudent[]){
