@@ -24,15 +24,18 @@ export class ClockService {
   }
 
   // toIsoString
-  clock(futureDate: string = "2022-10-24T00:00:00.000z"): Observable<string | null> {
+  clock(actualDate: string = "00:00:00"): Observable<string | null> {
     //let clock = new Date().setHours(0, 0, 0, 0);
     //console.log(clock);
+    let timeDisplayed = actualDate.split(":");
+    let timerInitial = Number.parseInt(timeDisplayed[0]) * 3600 + Number.parseInt(timeDisplayed[1]) * 60 +Number.parseInt(timeDisplayed[2]);
 
-    return timer(0, 1000).pipe(
+    console.log(timerInitial, "Time initial");
+    return timer(timerInitial, 1000).pipe(
       map(() => {
         this.timeRemaining = this.timeRemaining + 1000;
         return this.msToTime(this.timeRemaining);
-        // or 
+        // or
         // return this.msToTime(this.getMsDiff(futureDate));
       })
     );

@@ -1,9 +1,10 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { catchError, map, first, delay, retry, shareReplay } from 'rxjs';
+import { catchError, map, first, delay, retry, shareReplay, throwError, Observable } from 'rxjs';
 import { IStudent } from '../../models/students.model.interface';
 import { EventBusService } from './event-bus.service';
-
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { convertSnaps } from '../utils/db-utils';
 @Injectable({
   providedIn: 'root',
 })
@@ -11,7 +12,8 @@ export class StudentsService {
   personas: IStudent[] = [];
   static STUDENT_NUMBER = 50;
   constructor(private http: HttpClient,
-    private eventbus: EventBusService) {
+    private eventbus: EventBusService,
+    private db: AngularFirestore) {
       this.initList();
     }
   initList(){
@@ -90,6 +92,23 @@ export class StudentsService {
       retry(3),
       shareReplay()
     );
+  }
+
+   findStudentById(idStudent: string = "A01636172") : Observable<any> {
+        return this.db
+          .collection('students', (ref:any) => ref.where('idStudent', '==', idStudent))
+          .snapshotChanges()
+          .pipe(
+            catchError((err:any) => {
+              return throwError(() => err);
+            }),
+            map((snaps) => {
+              const student = convertSnaps<IStudent>(snaps);
+              console.log(student, 'Snaps entra a map');
+              return student.length == 1 ? student[0] : undefined;
+            }),
+            first()
+          );
   }
 
 

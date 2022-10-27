@@ -35,8 +35,16 @@
         <div nz-row nzJustify="center">
             <div nz-col style="margin-top:2em;">
                 <h2 nz-typography nzType="success">Emergencia</h2>
-                <h2 style="color:white; text-align: center;">{{this.actualTime}}</h2>
+                <h2 style="color:white; text-align: center;">{{this.actualTimeFb.toString()}}</h2>
             </div>
+        </div>
+        <div nz-row nzJustify="center">
+          <div nz-col style="margin-top:2em;">
+
+            <div style="color:white; text-align: center;"><button (click)="test()">
+              Firebase
+            </button></div>
+          </div>
         </div>
     </nz-sider>
     <nz-layout>
@@ -52,35 +60,36 @@
                     </div>
                     <div nz-col nzSpan="8" nzOffset="8">
 
-                        <span style="width: 100%; text-align:right;">
+                        <ng-container>
+                          <span style="width: 100%; text-align:right;">
                             <nz-space [nzSize]="10">
-                                <button (click)="this.start()" *nzSpaceItem  nz-button nzType="primary" [nzSize]="this.size"
-                                [disabled]="this.stopTimer"
+                              <button (click)="this.start()" *nzSpaceItem nz-button nzType="primary"
+                                [nzSize]="this.size" [disabled]="this.stopTimer"
                                 style="padding:0.5em; width: 6.5em; height: 4m;">
-                                    <div>
-                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>
-                                        <span>&nbsp;</span>
-                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>
-                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>
+                                <div>
+                                  <span nz-icon nzType="play-circle" nzTheme="outline"
+                                    style="display: contents;"></span>
+                                  <span>&nbsp;</span>
+                                  <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>
+                                  <ng-container *ngIf="this.pauseButton">Resumir</ng-container>
 
-                                    </div>
-                                  </button>
-                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"
-                                  (click)="this.pause()"
-                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"
-                                  style="padding:0.5em; width: 6.5em; height: 3.5m;">
-                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>
-                                  Pause
-                                </button>
-                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"
-                                (click)="this.stop()"
-                                [disabled]="!this.pauseButton"
+                                </div>
+                              </button>
+                              <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"
+                                (click)="this.pause()"
+                                [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"
                                 style="padding:0.5em; width: 6.5em; height: 3.5m;">
+                                <span nz-icon nzType="pause-circle" nzTheme="outline"></span>
+                                Pause
+                              </button>
+                              <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size" (click)="this.stop()"
+                                [disabled]="!this.pauseButton" style="padding:0.5em; width: 6.5em; height: 3.5m;">
                                 <span nz-icon nzType="save" nzTheme="outline"></span>
                                 Detener
                               </button>
                             </nz-space>
-                       </span>
+                          </span>
+                        </ng-container>
                     </div>
                   </div>
             </div>

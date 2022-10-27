@@ -15,6 +15,9 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { StudentsService } from './core/services/students.service';
 import { ClockService } from './core/services/clock.service';
 import { ClonerService } from './core/services/cloner.service';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from '../environments/environment';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 
 registerLocaleData(en);
 
@@ -27,6 +30,8 @@ registerLocaleData(en);
     SharedModule,
     NgbModule,
     MessagesModule,
+    AngularFirestoreModule,
+    AngularFireModule.initializeApp(environment.firebase),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService, NzMessageService, StudentsService, ClockService, ClonerService],
   bootstrap: [AppComponent],
