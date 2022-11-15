@@ -18,7 +18,7 @@
 - [Documentation](#documentation)
 
 ## 🧐 About <a name = "about"></a>
-Es una aplicación web hecha en Angular 13, que ayuda a los alumnos y profesores, que estén registrados y se pueda saber quién está a salvo.
+Es una aplicación web hecha en Angular 13, que ayuda a los alumnos y profesores, que estén registrados y se pueda saber quién está a salvo, a partir del uso del LocalStorage.
 
 ### Initial View
 <img src="./welcome.JPG" alt="Safe move"></a>
