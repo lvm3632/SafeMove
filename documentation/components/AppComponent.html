@@ -1,0 +1,1133 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>safe-move documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+
+        <div class="navbar navbar-default navbar-fixed-top visible-xs">
+            <a href="../" class="navbar-brand">safe-move documentation</a>
+            <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="hidden-xs menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li>Components</li>
+  <li
+  >
+  AppComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="active">
+            <a href="#info" role="tab" id="info-tab" data-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li >
+            <a href="#source" role="tab" id="source-tab" data-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li >
+            <a href="#templateData" role="tab" id="templateData-tab" data-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li >
+            <a href="#styleData" role="tab" id="styleData-tab" data-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li >
+            <a href="#tree" role="tab" id="tree-tab" data-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="c-info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/app.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                    <code><a href="https://angular.io/api/core/OnInit" target="_blank" >OnInit</a></code>
+    </p>
+
+
+<section>
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-root</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./app.component.scss</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./app.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#actualTime" >actualTime</a>
+                            </li>
+                            <li>
+                                <a href="#detenerBtn" >detenerBtn</a>
+                            </li>
+                            <li>
+                                <a href="#isButtonVisible" >isButtonVisible</a>
+                            </li>
+                            <li>
+                                <a href="#isCollapsed" >isCollapsed</a>
+                            </li>
+                            <li>
+                                <a href="#pauseButton" >pauseButton</a>
+                            </li>
+                            <li>
+                                <a href="#size" >size</a>
+                            </li>
+                            <li>
+                                <a href="#stopTimer" >stopTimer</a>
+                            </li>
+                            <li>
+                                <a href="#timerUnsuscribe" >timerUnsuscribe</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                <a href="#pause" >pause</a>
+                            </li>
+                            <li>
+                                <a href="#start" >start</a>
+                            </li>
+                            <li>
+                                <a href="#stop" >stop</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section>
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(clockService: <a href="../injectables/ClockService.html" target="_self">ClockService</a>, studentsService: <a href="../injectables/StudentsService.html" target="_self">StudentsService</a>, eventbus: <a href="../injectables/EventBusService.html" target="_self">EventBusService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>clockService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/ClockService.html" target="_self" >ClockService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>studentsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/StudentsService.html" target="_self" >StudentsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                                <tr>
+                                                        <td>eventbus</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/EventBusService.html" target="_self" >EventBusService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+
+    <section>
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="27"
+                            class="link-to-prism">src/app/app.component.ts:27</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pause"></a>
+                    <span class="name">
+                        <span ><b>pause</b></span>
+                        <a href="#pause"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>pause()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="65"
+                            class="link-to-prism">src/app/app.component.ts:65</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="start"></a>
+                    <span class="name">
+                        <span ><b>start</b></span>
+                        <a href="#start"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>start()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="50"
+                            class="link-to-prism">src/app/app.component.ts:50</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stop"></a>
+                    <span class="name">
+                        <span ><b>stop</b></span>
+                        <a href="#stop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>stop()</code>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-line">Defined in <a href="" data-line="73"
+                            class="link-to-prism">src/app/app.component.ts:73</a></div>
+                </td>
+            </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                    <div class="io-description">
+                        <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section>
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="actualTime"></a>
+                    <span class="name">
+                        <span ><b>actualTime</b></span>
+                        <a href="#actualTime"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&quot;00:00:00&quot;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="17" class="link-to-prism">src/app/app.component.ts:17</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="detenerBtn"></a>
+                    <span class="name">
+                        <span ><b>detenerBtn</b></span>
+                        <a href="#detenerBtn"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="21" class="link-to-prism">src/app/app.component.ts:21</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isButtonVisible"></a>
+                    <span class="name">
+                        <span ><b>isButtonVisible</b></span>
+                        <a href="#isButtonVisible"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="16" class="link-to-prism">src/app/app.component.ts:16</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="isCollapsed"></a>
+                    <span class="name">
+                        <span ><b>isCollapsed</b></span>
+                        <a href="#isCollapsed"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="15" class="link-to-prism">src/app/app.component.ts:15</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="pauseButton"></a>
+                    <span class="name">
+                        <span ><b>pauseButton</b></span>
+                        <a href="#pauseButton"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="19" class="link-to-prism">src/app/app.component.ts:19</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="size"></a>
+                    <span class="name">
+                        <span ><b>size</b></span>
+                        <a href="#size"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>NzButtonSize</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>&#x27;large&#x27;</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="14" class="link-to-prism">src/app/app.component.ts:14</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="stopTimer"></a>
+                    <span class="name">
+                        <span ><b>stopTimer</b></span>
+                        <a href="#stopTimer"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" target="_blank" >boolean</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>false</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="18" class="link-to-prism">src/app/app.component.ts:18</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="timerUnsuscribe"></a>
+                    <span class="name">
+                        <span ><b>timerUnsuscribe</b></span>
+                        <a href="#timerUnsuscribe"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>new Subscription()</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="20" class="link-to-prism">src/app/app.component.ts:20</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="c-source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { NzButtonSize } from &#x27;ng-zorro-antd/button&#x27;;
+import { Subscription } from &#x27;rxjs&#x27;;
+import { ClockService } from &#x27;./core/services/clock.service&#x27;;
+import { EventBusService } from &#x27;./core/services/event-bus.service&#x27;;
+import { StudentsService } from &#x27;./core/services/students.service&#x27;;
+
+@Component({
+  selector: &#x27;app-root&#x27;,
+  templateUrl: &#x27;./app.component.html&#x27;,
+  styleUrls: [&#x27;./app.component.scss&#x27;],
+})
+export class AppComponent implements OnInit{
+  size: NzButtonSize &#x3D; &#x27;large&#x27;;
+  isCollapsed &#x3D; false;
+  isButtonVisible &#x3D; false;
+  actualTime: string &#x3D; &quot;00:00:00&quot;;
+  stopTimer: boolean &#x3D; false;
+  pauseButton: boolean &#x3D; false;
+  timerUnsuscribe &#x3D; new Subscription();
+  detenerBtn: boolean &#x3D; false;
+
+  constructor(private clockService: ClockService,
+    private studentsService:StudentsService,
+    private eventbus: EventBusService){}
+
+  ngOnInit(){
+    let bottons: any | null &#x3D; localStorage.getItem(&quot;bottons&quot;);
+    bottons &#x3D; bottons !&#x3D; null ? JSON.parse(bottons || &quot;&quot;) : &quot;&quot;;
+
+    let timer: any | null &#x3D; localStorage.getItem(&quot;timer&quot;);
+    timer &#x3D; timer !&#x3D; null ? JSON.parse(timer || &quot;&quot;) : &quot;&quot;;
+
+    if(bottons !&#x3D; &quot;&quot;){
+      this.stopTimer &#x3D; bottons.stopTimer;
+      this.pauseButton &#x3D; bottons.pauseButton;
+      this.detenerBtn &#x3D; bottons.detenerBtn;
+    }
+
+    if(timer !&#x3D; &quot;&quot;){
+      this.actualTime &#x3D; timer.actualTime;
+      console.log(timer, &quot;TIMER&quot;);
+      if(this.stopTimer){
+        this.start();
+      }
+    }
+    console.log(this.actualTime, &quot;tiempo actual&quot;);
+  }
+
+  start(){
+    this.stopTimer &#x3D; true;
+    this.pauseButton &#x3D; false;
+    this.detenerBtn &#x3D; false;
+    localStorage.setItem(&#x27;bottons&#x27;, JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
+    console.log(this.actualTime, &quot;TIEMPO ANTES??&quot;);
+    this.timerUnsuscribe &#x3D; this.clockService.clock(this.actualTime).subscribe((data:any) &#x3D;&gt; {
+      console.log(data, this.actualTime, &quot;TIEMPOS&quot;)
+      this.actualTime &#x3D; data;
+      this.eventbus.trigger(&quot;tiempo&quot;, &quot;tiempo&quot;,  this.actualTime);
+      localStorage.setItem(&#x27;timer&#x27;, JSON.stringify({actualTime: this.actualTime}));
+      this.clockService.start();
+    })
+  }
+
+  pause(){
+    this.timerUnsuscribe.unsubscribe();
+    this.stopTimer&#x3D;false;
+    this.pauseButton &#x3D; true;
+    this.detenerBtn &#x3D; true;
+    localStorage.setItem(&#x27;bottons&#x27;, JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
+  }
+
+  stop(){
+    this.timerUnsuscribe.unsubscribe();
+    if(this.detenerBtn){
+      this.clockService.timeRemaining &#x3D; 0;
+      this.actualTime &#x3D; &quot;00:00:00&quot;;
+      localStorage.setItem(&#x27;timer&#x27;, JSON.stringify({actualTime: this.actualTime}));
+      this.detenerBtn &#x3D; false;
+      this.pauseButton &#x3D; false;
+      this.clockService.end();
+      console.log(this.studentsService.getPeople(), &quot;Personas al detener&quot;);
+      //this.studentsService.copy(...this.studentsService.getPeople());
+      setTimeout(() &#x3D;&gt; {
+        this.studentsService.clear();
+      }, 3000)
+    }
+    localStorage.setItem(&#x27;bottons&#x27;, JSON.stringify({stopTimer: this.stopTimer, pauseButton: this.pauseButton, detenerBtn: this.detenerBtn}));
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;nz-layout class&#x3D;&quot;app-layout&quot;&gt;
+    &lt;nz-sider class&#x3D;&quot;menu-sidebar&quot; nzCollapsible nzBreakpoint&#x3D;&quot;lg&quot; [nzCollapsedWidth]&#x3D;&quot;0&quot; [(nzCollapsed)]&#x3D;&quot;isCollapsed&quot;
+        [nzTrigger]&#x3D;&quot;null&quot;&gt;
+        &lt;div class&#x3D;&quot;sidebar-logo&quot;&gt;
+            &lt;a href&#x3D;&quot;https://ng.ant.design/&quot; target&#x3D;&quot;_blank&quot;&gt;
+                &lt;img src&#x3D;&quot;https://ng.ant.design/assets/img/logo.svg&quot; alt&#x3D;&quot;logo&quot;&gt;
+                &lt;h1&gt;Safe Move&lt;/h1&gt;
+            &lt;/a&gt;
+        &lt;/div&gt;
+        &lt;ul nz-menu nzTheme&#x3D;&quot;dark&quot; nzMode&#x3D;&quot;inline&quot; [nzInlineCollapsed]&#x3D;&quot;isCollapsed&quot;&gt;
+            &lt;li nz-submenu nzOpen nzTitle&#x3D;&quot;Registro&quot; nzIcon&#x3D;&quot;dashboard&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li nz-menu-item nzMatchRouter style&#x3D;&quot;text-decoration:none;&quot;&gt;
+                        &lt;a routerLink&#x3D;&quot;/welcome&quot;&gt;Registro&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li nz-menu-item nzMatchRouter&gt;
+                        &lt;a routerLink&#x3D;&quot;/students&quot;&gt;Alumnos&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;li nz-menu-item nzMatchRouter&gt;
+                        &lt;a routerLink&#x3D;&quot;/dashboard&quot;&gt;Métricas&lt;/a&gt;
+                    &lt;/li&gt;
+                    &lt;!-- &lt;li nz-menu-item nzMatchRouter&gt;
+                        &lt;a&gt;Metrics&lt;/a&gt;
+                    &lt;/li&gt; --&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt;
+            &lt;!-- &lt;li nz-submenu nzOpen nzTitle&#x3D;&quot;Form&quot; nzIcon&#x3D;&quot;form&quot;&gt;
+                &lt;ul&gt;
+                    &lt;li nz-menu-item nzMatchRouter&gt;
+                        &lt;a&gt;Basic Form&lt;/a&gt;
+                    &lt;/li&gt;
+                &lt;/ul&gt;
+            &lt;/li&gt; --&gt;
+        &lt;/ul&gt;
+        &lt;div nz-row nzJustify&#x3D;&quot;center&quot;&gt;
+            &lt;div nz-col style&#x3D;&quot;margin-top:2em;&quot;&gt;
+                &lt;h2 nz-typography nzType&#x3D;&quot;success&quot;&gt;Emergencia&lt;/h2&gt;
+                &lt;h2 style&#x3D;&quot;color:white; text-align: center;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
+                  &lt;div nz-col style&#x3D;&quot;margin-top:0.425em;&quot;
+                     [nzXs]&#x3D;&quot;{ span: 22, offset: 0 }&quot;
+                    [nzSm]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzMd]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzLg]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzXXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    &gt;
+                        &lt;span style&#x3D;&quot;width: 100%; text-align:center; margin-left:2em;&quot;&gt;
+                           
+                                &lt;button (click)&#x3D;&quot;this.start()&quot;   nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                [disabled]&#x3D;&quot;this.stopTimer&quot;
+                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 4m; margin-bottom:1em;&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;span nz-icon nzType&#x3D;&quot;play-circle&quot; nzTheme&#x3D;&quot;outline&quot; style&#x3D;&quot;display: contents;&quot; &gt;&lt;/span&gt;
+                                        &lt;span&gt;&amp;nbsp;&lt;/span&gt;
+                                        &lt;ng-container *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar &lt;/ng-container&gt;
+                                        &lt;ng-container *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
+                                    &lt;/div&gt;
+                                  &lt;/button&gt;
+                                  &lt;br/&gt;
+                                  &lt;button nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                  (click)&#x3D;&quot;this.pause()&quot;
+                                  [disabled]&#x3D;&quot;!this.stopTimer &amp;&amp; !this.pauseButton || this.pauseButton&quot;
+                                  style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;&quot;&gt;
+                                  &lt;span nz-icon nzType&#x3D;&quot;pause-circle&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                                  Pause
+                                &lt;/button&gt;
+                                  &lt;br/&gt;
+
+                                &lt;button nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                (click)&#x3D;&quot;this.stop()&quot;
+                                [disabled]&#x3D;&quot;!this.pauseButton&quot;
+                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;&quot;&gt;
+                                &lt;span nz-icon nzType&#x3D;&quot;save&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                                Detener
+                              &lt;/button&gt;
+                              
+                       &lt;/span&gt;
+                      
+                    &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/nz-sider&gt;
+    &lt;nz-layout&gt;
+        &lt;nz-header&gt;
+            &lt;div class&#x3D;&quot;app-header&quot;&gt;
+                &lt;div nz-row style&#x3D;&quot;text-align:right;&quot;&gt;
+                    &lt;div nz-col&gt;
+                        &lt;span class&#x3D;&quot;header-trigger&quot; (click)&#x3D;&quot;isCollapsed &#x3D; !isCollapsed&quot; style&#x3D;&quot;width: 100% !important;&quot;&gt;
+                            &lt;i class&#x3D;&quot;trigger&quot; nz-icon [nzType]&#x3D;&quot;isCollapsed ? &#x27;menu-unfold&#x27; : &#x27;menu-fold&#x27;&quot;&gt;&lt;/i&gt;
+                        &lt;/span&gt;
+                    &lt;/div&gt;
+                    
+                    &lt;div nz-col style&#x3D;&quot;margin-top:0.425em;&quot;
+                     [nzXs]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzSm]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
+                    [nzMd]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
+                    [nzLg]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
+                    [nzXl]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
+                    [nzXXl]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
+                    &gt;
+                        &lt;span style&#x3D;&quot;width: 100%; text-align:right;&quot;&gt;
+                            &lt;nz-space [nzSize]&#x3D;&quot;12&quot;&gt;
+                                &lt;button (click)&#x3D;&quot;this.start()&quot; *nzSpaceItem  nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                [disabled]&#x3D;&quot;this.stopTimer&quot;
+                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 4m;&quot;&gt;
+                                    &lt;div&gt;
+                                        &lt;span nz-icon nzType&#x3D;&quot;play-circle&quot; nzTheme&#x3D;&quot;outline&quot; style&#x3D;&quot;display: contents;&quot; &gt;&lt;/span&gt;
+                                        &lt;span&gt;&amp;nbsp;&lt;/span&gt;
+                                        &lt;ng-container *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar &lt;/ng-container&gt;
+                                        &lt;ng-container *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
+                                    &lt;/div&gt;
+                                  &lt;/button&gt;
+                                  &lt;button *nzSpaceItem nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                  (click)&#x3D;&quot;this.pause()&quot;
+                                  [disabled]&#x3D;&quot;!this.stopTimer &amp;&amp; !this.pauseButton || this.pauseButton&quot;
+                                  style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;&quot;&gt;
+                                  &lt;span nz-icon nzType&#x3D;&quot;pause-circle&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                                  Pause
+                                &lt;/button&gt;
+                                &lt;button *nzSpaceItem nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
+                                (click)&#x3D;&quot;this.stop()&quot;
+                                [disabled]&#x3D;&quot;!this.pauseButton&quot;
+                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;&quot;&gt;
+                                &lt;span nz-icon nzType&#x3D;&quot;save&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                                Detener
+                              &lt;/button&gt;
+
+                                &lt;h2 *nzSpaceItem   style&#x3D;&quot;color: #1bb; text-align: right; margin-right:0.5em;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
+                            &lt;/nz-space&gt;
+                       &lt;/span&gt;
+                      
+                    &lt;/div&gt;
+                  &lt;/div&gt;
+            &lt;/div&gt;
+        
+        &lt;/nz-header&gt;
+        &lt;nz-content&gt;
+            &lt;div class&#x3D;&quot;inner-content&quot;&gt;
+                &lt;div class&#x3D;&quot;col&quot;&gt;
+                     &lt;h2   nz-col
+                     [nzXs]&#x3D;&quot;{ span: 23, offset: 1 }&quot;
+                    [nzSm]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzMd]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzLg]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                    [nzXXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
+                     style&#x3D;&quot;color: #1bb; text-align: left; margin-left:0.5em;&quot;&gt;&lt;span style&#x3D;&quot;color:green;&quot;&gt;Emergencia actual: &lt;/span&gt;{{this.actualTime}}&lt;/h2&gt;
+                    &lt;router-outlet&gt;&lt;/router-outlet&gt;
+                    &lt;messages&gt;&lt;/messages&gt;
+                &lt;/div&gt;
+                &lt;!-- &lt;div class&#x3D;&quot;col&quot;&gt;
+                    &lt;router-outlet name&#x3D;&quot;mensajes&quot;&gt;&lt;/router-outlet&gt;
+                &lt;/div&gt; --&gt;
+            &lt;/div&gt;
+        &lt;/nz-content&gt;
+    &lt;/nz-layout&gt;
+&lt;/nz-layout&gt;
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-styleData">
+                <p class="comment">
+                    <code>./app.component.scss</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:host {
+    display: flex;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.app-layout {
+    height: 100vh;
+}
+
+.menu-sidebar {
+    position: relative;
+    z-index: 10;
+    min-height: 100vh;
+    box-shadow: 2px 0 6px rgba(0, 21, 41, .35);
+}
+
+.header-trigger {
+    height: 64px;
+    padding: 20px 24px;
+    font-size: 20px;
+    cursor: pointer;
+    transition: all .3s, padding 0s;
+}
+
+.trigger:hover {
+    color: #1890ff;
+}
+
+.sidebar-logo {
+    position: relative;
+    height: 64px;
+    padding-left: 24px;
+    overflow: hidden;
+    line-height: 64px;
+    background: #001529;
+    transition: all .3s;
+}
+
+.sidebar-logo img {
+    display: inline-block;
+    height: 32px;
+    width: 32px;
+    vertical-align: middle;
+}
+
+.sidebar-logo h1 {
+    display: inline-block;
+    margin: 0 0 0 20px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 14px;
+    font-family: Avenir, Helvetica Neue, Arial, Helvetica, sans-serif;
+    vertical-align: middle;
+}
+
+nz-header {
+    padding: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+.app-header {
+    position: relative;
+    height: 64px;
+    padding: 0;
+    background: #fff;
+    box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
+}
+
+nz-content {
+    margin: 24px;
+}
+
+.inner-content {
+    background: #fff;
+}
+
+.ant-layout.app-layout.ant-layout-has-sider {
+    height: auto;
+}
+
+
+
+span.anticon {
+    display: contents;
+}
+
+.ant-layout-content {
+    max-width:95%;
+    width:95%;
+}</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="c-tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><nz-layout class="app-layout">    <nz-sider class="menu-sidebar" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" [(nzCollapsed)]="isCollapsed"        [nzTrigger]="null">        <div class="sidebar-logo">            <a href="https://ng.ant.design/" target="_blank">                <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">                <h1>Safe Move</h1>            </a>        </div>        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">            <li nz-submenu nzOpen nzTitle="Registro" nzIcon="dashboard">                <ul>                    <li nz-menu-item nzMatchRouter style="text-decoration:none;">                        <a routerLink="/welcome">Registro</a>                    </li>                    <li nz-menu-item nzMatchRouter>                        <a routerLink="/students">Alumnos</a>                    </li>                    <li nz-menu-item nzMatchRouter>                        <a routerLink="/dashboard">Métricas</a>                    </li>                    <!-- <li nz-menu-item nzMatchRouter>                        <a>Metrics</a>                    </li> -->                </ul>            </li>            <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">                <ul>                    <li nz-menu-item nzMatchRouter>                        <a>Basic Form</a>                    </li>                </ul>            </li> -->        </ul>        <div nz-row nzJustify="center">            <div nz-col style="margin-top:2em;">                <h2 nz-typography nzType="success">Emergencia</h2>                <h2 style="color:white; text-align: center;">{{this.actualTime}}</h2>                  <div nz-col style="margin-top:0.425em;"                     [nzXs]="{ span: 22, offset: 0 }"                    [nzSm]="{ span: 0, offset: 0 }"                    [nzMd]="{ span: 0, offset: 0 }"                    [nzLg]="{ span: 0, offset: 0 }"                    [nzXl]="{ span: 0, offset: 0 }"                    [nzXXl]="{ span: 0, offset: 0 }"                    >                        <span style="width: 100%; text-align:center; margin-left:2em;">                                                           <button (click)="this.start()"   nz-button nzType="primary" [nzSize]="this.size"                                [disabled]="this.stopTimer"                                style="padding:0.5em; width: 6.5em; height: 4m; margin-bottom:1em;">                                    <div>                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>                                        <span>&nbsp;</span>                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>                                    </div>                                  </button>                                  <br/>                                  <button nz-button nzType="primary" [nzSize]="this.size"                                  (click)="this.pause()"                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"                                  style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>                                  Pause                                </button>                                  <br/>                                <button nz-button nzType="primary" [nzSize]="this.size"                                (click)="this.stop()"                                [disabled]="!this.pauseButton"                                style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">                                <span nz-icon nzType="save" nzTheme="outline"></span>                                Detener                              </button>                                                     </span>                                          </div>            </div>        </div>    </nz-sider>    <nz-layout>        <nz-header>            <div class="app-header">                <div nz-row style="text-align:right;">                    <div nz-col>                        <span class="header-trigger" (click)="isCollapsed = !isCollapsed" style="width: 100% !important;">                            <i class="trigger" nz-icon [nzType]="isCollapsed ? \'menu-unfold\' : \'menu-fold\'"></i>                        </span>                    </div>                                        <div nz-col style="margin-top:0.425em;"                     [nzXs]="{ span: 0, offset: 0 }"                    [nzSm]="{ span: 20, offset: 0 }"                    [nzMd]="{ span: 20, offset: 0 }"                    [nzLg]="{ span: 20, offset: 0 }"                    [nzXl]="{ span: 20, offset: 0 }"                    [nzXXl]="{ span: 20, offset: 0 }"                    >                        <span style="width: 100%; text-align:right;">                            <nz-space [nzSize]="12">                                <button (click)="this.start()" *nzSpaceItem  nz-button nzType="primary" [nzSize]="this.size"                                [disabled]="this.stopTimer"                                style="padding:0.5em; width: 6.5em; height: 4m;">                                    <div>                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>                                        <span>&nbsp;</span>                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>                                    </div>                                  </button>                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"                                  (click)="this.pause()"                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"                                  style="padding:0.5em; width: 6.5em; height: 3.5m;">                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>                                  Pause                                </button>                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"                                (click)="this.stop()"                                [disabled]="!this.pauseButton"                                style="padding:0.5em; width: 6.5em; height: 3.5m;">                                <span nz-icon nzType="save" nzTheme="outline"></span>                                Detener                              </button>                                <h2 *nzSpaceItem   style="color: #1bb; text-align: right; margin-right:0.5em;">{{this.actualTime}}</h2>                            </nz-space>                       </span>                                          </div>                  </div>            </div>                </nz-header>        <nz-content>            <div class="inner-content">                <div class="col">                     <h2   nz-col                     [nzXs]="{ span: 23, offset: 1 }"                    [nzSm]="{ span: 0, offset: 0 }"                    [nzMd]="{ span: 0, offset: 0 }"                    [nzLg]="{ span: 0, offset: 0 }"                    [nzXl]="{ span: 0, offset: 0 }"                    [nzXXl]="{ span: 0, offset: 0 }"                     style="color: #1bb; text-align: left; margin-left:0.5em;"><span style="color:green;">Emergencia actual: </span>{{this.actualTime}}</h2>                    <router-outlet></router-outlet>                    <messages></messages>                </div>                <!-- <div class="col">                    <router-outlet name="mensajes"></router-outlet>                </div> -->            </div>        </nz-content>    </nz-layout></nz-layout></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormStatusComponent', 'selector': 'app-form-status'},{'name': 'ListStudentsComponent', 'selector': 'app-list-students'},{'name': 'LoadingComponent', 'selector': 'loading'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'MetricsStudentsComponent', 'selector': 'app-metrics-students'},{'name': 'PureLoadingComponent', 'selector': 'app-pure-loading'},{'name': 'QrCodeComponent', 'selector': 'qr-code'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'AppComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'AppComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+       <script src="../js/libs/zepto.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
