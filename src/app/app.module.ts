@@ -15,6 +15,8 @@ import { NzMessageService } from 'ng-zorro-antd/message';
 import { StudentsService } from './core/services/students.service';
 import { ClockService } from './core/services/clock.service';
 import { ClonerService } from './core/services/cloner.service';
+import { ServiceWorkerModule } from '@angular/service-worker';
+import { environment } from '../environments/environment';
 
 registerLocaleData(en);
 
@@ -22,11 +24,17 @@ registerLocaleData(en);
   declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     CoreModule,
     SharedModule,
     NgbModule,
     MessagesModule,
+    AppRoutingModule,
+    ServiceWorkerModule.register('ngsw-worker.js', {
+      enabled: environment.production,
+      // Register the ServiceWorker as soon as the application is stable
+      // or after 30 seconds (whichever comes first).
+      registrationStrategy: 'registerWhenStable:1000'
+    }),
   ],
   providers: [{ provide: NZ_I18N, useValue: en_US }, EventBusService, NzMessageService, StudentsService, ClockService, ClonerService],
   bootstrap: [AppComponent],

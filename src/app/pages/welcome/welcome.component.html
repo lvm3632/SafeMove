@@ -38,3 +38,19 @@
        </div>
    </div>
  </div>
+
+
+<button style="margin-bottom:4em;" (click)="this.checkInternet()" nz-button nzType="primary">Probar service worker</button>
+ <ng-container>
+      <div class="gutter-example">
+        <div nz-row [nzGutter]="[64, 64]">
+          <div nz-col class="gutter-row" [nzSpan]="24 / 4" *ngFor="let img of this.data">
+            <div class="grid-config">
+              <img loading="lazy" [src]="img.download_url" style="max-width: 18em; max-height: 18em;">
+            </div>
+          </div>
+        </div>
+      </div>
+ </ng-container>
+
+ <img src="https://cdn-icons-png.flaticon.com/512/6510/6510324.png">

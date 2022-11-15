@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { AbstractControl, UntypedFormBuilder, UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { EventBusService } from 'src/app/core/services/event-bus.service';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { concatMap } from 'rxjs/operators';
@@ -14,17 +14,17 @@ import { NzNotificationService } from 'ng-zorro-antd/notification';
   styleUrls: ['./form-status.component.scss']
 })
 export class FormStatusComponent implements OnInit {
-  validateForm!: FormGroup;
+  validateForm!: UntypedFormGroup;
   activeTimer:boolean = false;
   disabledInputs: boolean = false;
-  fullName: FormControl = new FormControl({value: '', disabled: this.disabledInputs}, [Validators.required]);
-  idStudent: FormControl = new FormControl({value: '', disabled: this.disabledInputs}, [Validators.required, Validators.pattern("(A|a|l|L)[0-9]{8}")]);
-  room: FormControl = new FormControl({value: '', disabled: this.disabledInputs});
+  fullName: UntypedFormControl = new UntypedFormControl({value: '', disabled: this.disabledInputs}, [Validators.required]);
+  idStudent: UntypedFormControl = new UntypedFormControl({value: '', disabled: this.disabledInputs}, [Validators.required, Validators.pattern("(A|a|l|L)[0-9]{8}")]);
+  room: UntypedFormControl = new UntypedFormControl({value: '', disabled: this.disabledInputs});
   actualTimer: string = "";
   clicked: boolean = false;
   loading: boolean = false;
 
-  constructor(private fb: FormBuilder,
+  constructor(private fb: UntypedFormBuilder,
     private eventbus: EventBusService,
     private message:NzMessageService,
     private students: StudentsService,
