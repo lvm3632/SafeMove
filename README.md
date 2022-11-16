@@ -16,9 +16,9 @@
 - [Getting Started](#getting_started)
 - [Deployment](#deployment)
 - [Documentation](#documentation)
-
+- [Accessibility standards](#standars)
 ## 🧐 About <a name = "about"></a>
-Es una aplicación web hecha en Angular 13, que ayuda a los alumnos y profesores, que estén registrados y se pueda saber quién está a salvo, a partir del uso del LocalStorage.
+Es una aplicación web progresiva hecha en Angular 14, que ayuda a los alumnos y profesores, que estén registrados y se pueda saber quién está a salvo, a partir del uso del LocalStorage y de tener una sesión en modo offline.
 
 ### Initial View
 <img src="./welcome.JPG" alt="Safe move"></a>
@@ -33,7 +33,7 @@ Es una aplicación web hecha en Angular 13, que ayuda a los alumnos y profesores
 Clonar el repositorio, tener instalada la última versión de Angular CLI, y un navegador como Chrome.
 
 ### Prerequisites
-Angular CLI: 13.3.9
+Angular CLI: 14.2.9
 
 Node: 16.14.2
 
@@ -88,37 +88,37 @@ La aplicación usa ant-design como principal framework de customización y dise�
 Librerías necesarias al momento del lanzamiento de la última **versión 1.0.0**
 
 ```
-    @angular/animations : ~13.3.0
-    @angular/common : ~13.3.0
-    @angular/compiler : ~13.3.0
-    @angular/core : ~13.3.0
-    @angular/forms : ~13.3.0
-    @angular/localize : ~13.3.0
-    @angular/platform-browser : ~13.3.0
-    @angular/platform-browser-dynamic : ~13.3.0
-    @angular/router : ~13.3.0
-    @ng-bootstrap/ng-bootstrap : ^12.1.2
-    @popperjs/core : ^2.10.2
-    angularx-qrcode : ^13.0.15
-    apexcharts : ^3.35.5
-    body-parser : ^1.20.1
-    bootstrap : ^5.2.0
-    clone : ^2.1.2
-    compression : ^1.7.4
-    cors : ^2.8.5
-    dotenv : ^16.0.3
-    express : ^4.18.2
-    express-session : ^1.17.3
-    fs : ^0.0.1-security
-    https : ^1.0.0
-    ng-apexcharts : ^1.7.1
-    ng-zorro-antd : ^13.4.0
-    ngx-mask : 13.1.15
-    path : ^0.12.7
-    rxjs : ~7.5.0
-    tslib : ^2.3.0
-    zone.js : ~0.11.4
-
+    "@angular/animations": "^14.2.10",
+    "@angular/common": "^14.2.10",
+    "@angular/compiler": "^14.2.10",
+    "@angular/core": "^14.2.10",
+    "@angular/forms": "^14.2.10",
+    "@angular/localize": "^14.2.10",
+    "@angular/platform-browser": "^14.2.10",
+    "@angular/platform-browser-dynamic": "^14.2.10",
+    "@angular/router": "^14.2.10",
+    "@angular/service-worker": "^14.2.10",
+    "@ng-bootstrap/ng-bootstrap": "^12.1.2",
+    "@popperjs/core": "^2.10.2",
+    "angularx-qrcode": "^13.0.15",
+    "apexcharts": "^3.35.5",
+    "body-parser": "^1.20.1",
+    "bootstrap": "^5.2.0",
+    "clone": "^2.1.2",
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "fs": "^0.0.1-security",
+    "https": "^1.0.0",
+    "ng-apexcharts": "^1.7.1",
+    "ng-zorro-antd": "^13.4.0",
+    "ngx-mask": "13.1.15",
+    "path": "^0.12.7",
+    "rxjs": "~7.5.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.11.4"
 ```
 
 ### Modules and more
@@ -149,7 +149,12 @@ Librerías necesarias al momento del lanzamiento de la última **versión 1.0.0*
 ## 🎈 Usage <a name="usage"></a>
 Si se quiere desplegar en un servidor como linux, es necesario desplegarlo en un motor de plantillas como la función ofrecida por express "express.static", a partir de correr una instancia de node.
 
-
+## 🌐 Accesibility Standards: Web3 <a name = "standards"></a>
+- PWA Aplication
+- Offline mode (cache)
+- Service worker
+- Local Storage
+- Reactive style paradigm (using RxJS, stateful in overall)
 ## ⛏️ Built Using <a name = "built_using"></a>
 - [Angular](https://angular.io/) - Database
 - [Express](https://expressjs.com/) - Server Framework

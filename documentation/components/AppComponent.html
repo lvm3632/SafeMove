@@ -760,162 +760,291 @@ export class AppComponent implements OnInit{
 
     <div class="tab-pane fade " id="c-templateData">
         <pre class="line-numbers"><code class="language-html">&lt;nz-layout class&#x3D;&quot;app-layout&quot;&gt;
-    &lt;nz-sider class&#x3D;&quot;menu-sidebar&quot; nzCollapsible nzBreakpoint&#x3D;&quot;lg&quot; [nzCollapsedWidth]&#x3D;&quot;0&quot; [(nzCollapsed)]&#x3D;&quot;isCollapsed&quot;
-        [nzTrigger]&#x3D;&quot;null&quot;&gt;
-        &lt;div class&#x3D;&quot;sidebar-logo&quot;&gt;
-            &lt;a href&#x3D;&quot;https://ng.ant.design/&quot; target&#x3D;&quot;_blank&quot;&gt;
-                &lt;img src&#x3D;&quot;https://ng.ant.design/assets/img/logo.svg&quot; alt&#x3D;&quot;logo&quot;&gt;
-                &lt;h1&gt;Safe Move&lt;/h1&gt;
-            &lt;/a&gt;
-        &lt;/div&gt;
-        &lt;ul nz-menu nzTheme&#x3D;&quot;dark&quot; nzMode&#x3D;&quot;inline&quot; [nzInlineCollapsed]&#x3D;&quot;isCollapsed&quot;&gt;
-            &lt;li nz-submenu nzOpen nzTitle&#x3D;&quot;Registro&quot; nzIcon&#x3D;&quot;dashboard&quot;&gt;
-                &lt;ul&gt;
-                    &lt;li nz-menu-item nzMatchRouter style&#x3D;&quot;text-decoration:none;&quot;&gt;
-                        &lt;a routerLink&#x3D;&quot;/welcome&quot;&gt;Registro&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li nz-menu-item nzMatchRouter&gt;
-                        &lt;a routerLink&#x3D;&quot;/students&quot;&gt;Alumnos&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;li nz-menu-item nzMatchRouter&gt;
-                        &lt;a routerLink&#x3D;&quot;/dashboard&quot;&gt;Métricas&lt;/a&gt;
-                    &lt;/li&gt;
-                    &lt;!-- &lt;li nz-menu-item nzMatchRouter&gt;
+  &lt;nz-sider class&#x3D;&quot;menu-sidebar&quot;
+    nzCollapsible nzBreakpoint&#x3D;&quot;lg&quot;
+    [nzCollapsedWidth]&#x3D;&quot;0&quot;
+    [(nzCollapsed)]&#x3D;&quot;isCollapsed&quot;
+    [nzTrigger]&#x3D;&quot;null&quot;&gt;
+    &lt;div class&#x3D;&quot;sidebar-logo&quot;&gt;
+      &lt;a href&#x3D;&quot;https://ng.ant.design/&quot;
+        target&#x3D;&quot;_blank&quot;&gt;
+        &lt;img
+          src&#x3D;&quot;https://ng.ant.design/assets/img/logo.svg&quot;
+          alt&#x3D;&quot;logo&quot;&gt;
+        &lt;h1&gt;Safe Move&lt;/h1&gt;
+      &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;ul nz-menu nzTheme&#x3D;&quot;dark&quot;
+      nzMode&#x3D;&quot;inline&quot;
+      [nzInlineCollapsed]&#x3D;&quot;isCollapsed&quot;&gt;
+      &lt;li nz-submenu nzOpen
+        nzTitle&#x3D;&quot;Registro&quot;
+        nzIcon&#x3D;&quot;dashboard&quot;&gt;
+        &lt;ul&gt;
+          &lt;li nz-menu-item nzMatchRouter
+            style&#x3D;&quot;text-decoration:none;&quot;&gt;
+            &lt;a href&#x3D;&quot;/welcome&quot;&gt;Registro&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li nz-menu-item
+            nzMatchRouter&gt;
+            &lt;a href&#x3D;&quot;/students&quot;&gt;Alumnos&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li nz-menu-item
+            nzMatchRouter&gt;
+            &lt;a href&#x3D;&quot;/dashboard&quot;&gt;Métricas&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li nz-menu-item
+            nzMatchRouter&gt;
+            &lt;a href&#x3D;&quot;/students&quot;&gt;SW&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;li nz-menu-item
+            nzMatchRouter&gt;
+            &lt;a href&#x3D;&quot;/students&quot;
+              target&#x3D;&quot;_blank&quot;&gt;SW Tab&lt;/a&gt;
+          &lt;/li&gt;
+          &lt;!-- &lt;li nz-menu-item nzMatchRouter&gt;
                         &lt;a&gt;Metrics&lt;/a&gt;
                     &lt;/li&gt; --&gt;
-                &lt;/ul&gt;
-            &lt;/li&gt;
-            &lt;!-- &lt;li nz-submenu nzOpen nzTitle&#x3D;&quot;Form&quot; nzIcon&#x3D;&quot;form&quot;&gt;
+        &lt;/ul&gt;
+      &lt;/li&gt;
+      &lt;!-- &lt;li nz-submenu nzOpen nzTitle&#x3D;&quot;Form&quot; nzIcon&#x3D;&quot;form&quot;&gt;
                 &lt;ul&gt;
                     &lt;li nz-menu-item nzMatchRouter&gt;
                         &lt;a&gt;Basic Form&lt;/a&gt;
                     &lt;/li&gt;
                 &lt;/ul&gt;
             &lt;/li&gt; --&gt;
-        &lt;/ul&gt;
-        &lt;div nz-row nzJustify&#x3D;&quot;center&quot;&gt;
-            &lt;div nz-col style&#x3D;&quot;margin-top:2em;&quot;&gt;
-                &lt;h2 nz-typography nzType&#x3D;&quot;success&quot;&gt;Emergencia&lt;/h2&gt;
-                &lt;h2 style&#x3D;&quot;color:white; text-align: center;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
-                  &lt;div nz-col style&#x3D;&quot;margin-top:0.425em;&quot;
-                     [nzXs]&#x3D;&quot;{ span: 22, offset: 0 }&quot;
-                    [nzSm]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzMd]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzLg]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzXXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    &gt;
-                        &lt;span style&#x3D;&quot;width: 100%; text-align:center; margin-left:2em;&quot;&gt;
-                           
-                                &lt;button (click)&#x3D;&quot;this.start()&quot;   nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                [disabled]&#x3D;&quot;this.stopTimer&quot;
-                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 4m; margin-bottom:1em;&quot;&gt;
-                                    &lt;div&gt;
-                                        &lt;span nz-icon nzType&#x3D;&quot;play-circle&quot; nzTheme&#x3D;&quot;outline&quot; style&#x3D;&quot;display: contents;&quot; &gt;&lt;/span&gt;
-                                        &lt;span&gt;&amp;nbsp;&lt;/span&gt;
-                                        &lt;ng-container *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar &lt;/ng-container&gt;
-                                        &lt;ng-container *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
-                                    &lt;/div&gt;
-                                  &lt;/button&gt;
-                                  &lt;br/&gt;
-                                  &lt;button nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                  (click)&#x3D;&quot;this.pause()&quot;
-                                  [disabled]&#x3D;&quot;!this.stopTimer &amp;&amp; !this.pauseButton || this.pauseButton&quot;
-                                  style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;&quot;&gt;
-                                  &lt;span nz-icon nzType&#x3D;&quot;pause-circle&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
-                                  Pause
-                                &lt;/button&gt;
-                                  &lt;br/&gt;
+    &lt;/ul&gt;
+    &lt;div nz-row nzJustify&#x3D;&quot;center&quot;&gt;
+      &lt;div nz-col
+        style&#x3D;&quot;margin-top:2em;&quot;&gt;
+        &lt;h2 nz-typography
+          nzType&#x3D;&quot;success&quot;&gt;Emergencia&lt;/h2&gt;
+        &lt;h2 style&#x3D;&quot;color:white;
+          text-align: center;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
+        &lt;div nz-col
+          style&#x3D;&quot;margin-top:0.425em;&quot;
+          [nzXs]&#x3D;&quot;{ span: 22, offset: 0
+          }&quot;
+          [nzSm]&#x3D;&quot;{ span: 0, offset: 0
+          }&quot;
+          [nzMd]&#x3D;&quot;{ span: 0, offset: 0
+          }&quot;
+          [nzLg]&#x3D;&quot;{ span: 0, offset: 0
+          }&quot;
+          [nzXl]&#x3D;&quot;{ span: 0, offset: 0
+          }&quot;
+          [nzXXl]&#x3D;&quot;{ span: 0, offset: 0
+          }&quot;&gt;
+          &lt;span style&#x3D;&quot;width: 100%;
+            text-align:center;
+            margin-left:2em;&quot;&gt;
 
-                                &lt;button nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                (click)&#x3D;&quot;this.stop()&quot;
-                                [disabled]&#x3D;&quot;!this.pauseButton&quot;
-                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;&quot;&gt;
-                                &lt;span nz-icon nzType&#x3D;&quot;save&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
-                                Detener
-                              &lt;/button&gt;
-                              
-                       &lt;/span&gt;
-                      
-                    &lt;/div&gt;
+            &lt;button
+              (click)&#x3D;&quot;this.start()&quot;
+              nz-button nzType&#x3D;&quot;primary&quot;
+              [nzSize]&#x3D;&quot;this.size&quot;
+              [disabled]&#x3D;&quot;this.stopTimer&quot;
+              style&#x3D;&quot;padding:0.5em;
+              width: 6.5em; height: 4m;
+              margin-bottom:1em;&quot;&gt;
+              &lt;div&gt;
+                &lt;span nz-icon
+                  nzType&#x3D;&quot;play-circle&quot;
+                  nzTheme&#x3D;&quot;outline&quot;
+                  style&#x3D;&quot;display:
+                  contents;&quot;&gt;&lt;/span&gt;
+                &lt;span&gt;&amp;nbsp;&lt;/span&gt;
+                &lt;ng-container
+                  *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar
+                &lt;/ng-container&gt;
+                &lt;ng-container
+                  *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
+              &lt;/div&gt;
+            &lt;/button&gt;
+            &lt;br/&gt;
+              &lt;button nz-button
+                nzType&#x3D;&quot;primary&quot;
+                [nzSize]&#x3D;&quot;this.size&quot;
+                (click)&#x3D;&quot;this.pause()&quot;
+                [disabled]&#x3D;&quot;!this.stopTimer
+                &amp;&amp; !this.pauseButton ||
+                this.pauseButton&quot;
+                style&#x3D;&quot;padding:0.5em;
+                width: 6.5em; height:
+                3.5m; margin-bottom:1em;
+                text-align:center;
+                margin-left:2em;&quot;&gt;
+                &lt;span nz-icon
+                  nzType&#x3D;&quot;pause-circle&quot;
+                  nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                Pause
+              &lt;/button&gt;
+              &lt;br/&gt;
+
+                &lt;button nz-button
+                  nzType&#x3D;&quot;primary&quot;
+                  [nzSize]&#x3D;&quot;this.size&quot;
+                  (click)&#x3D;&quot;this.stop()&quot;
+                  [disabled]&#x3D;&quot;!this.pauseButton&quot;
+                  style&#x3D;&quot;padding:0.5em;
+                  width: 6.5em; height:
+                  3.5m;
+                  margin-bottom:1em;
+                  text-align:center;
+                  margin-left:2em;&quot;&gt;
+                  &lt;span nz-icon
+                    nzType&#x3D;&quot;save&quot;
+                    nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                  Detener
+                &lt;/button&gt;
+
+              &lt;/span&gt;
+
             &lt;/div&gt;
+          &lt;/div&gt;
         &lt;/div&gt;
-    &lt;/nz-sider&gt;
-    &lt;nz-layout&gt;
+      &lt;/nz-sider&gt;
+      &lt;nz-layout&gt;
         &lt;nz-header&gt;
-            &lt;div class&#x3D;&quot;app-header&quot;&gt;
-                &lt;div nz-row style&#x3D;&quot;text-align:right;&quot;&gt;
-                    &lt;div nz-col&gt;
-                        &lt;span class&#x3D;&quot;header-trigger&quot; (click)&#x3D;&quot;isCollapsed &#x3D; !isCollapsed&quot; style&#x3D;&quot;width: 100% !important;&quot;&gt;
-                            &lt;i class&#x3D;&quot;trigger&quot; nz-icon [nzType]&#x3D;&quot;isCollapsed ? &#x27;menu-unfold&#x27; : &#x27;menu-fold&#x27;&quot;&gt;&lt;/i&gt;
-                        &lt;/span&gt;
-                    &lt;/div&gt;
-                    
-                    &lt;div nz-col style&#x3D;&quot;margin-top:0.425em;&quot;
-                     [nzXs]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzSm]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
-                    [nzMd]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
-                    [nzLg]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
-                    [nzXl]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
-                    [nzXXl]&#x3D;&quot;{ span: 20, offset: 0 }&quot;
-                    &gt;
-                        &lt;span style&#x3D;&quot;width: 100%; text-align:right;&quot;&gt;
-                            &lt;nz-space [nzSize]&#x3D;&quot;12&quot;&gt;
-                                &lt;button (click)&#x3D;&quot;this.start()&quot; *nzSpaceItem  nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                [disabled]&#x3D;&quot;this.stopTimer&quot;
-                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 4m;&quot;&gt;
-                                    &lt;div&gt;
-                                        &lt;span nz-icon nzType&#x3D;&quot;play-circle&quot; nzTheme&#x3D;&quot;outline&quot; style&#x3D;&quot;display: contents;&quot; &gt;&lt;/span&gt;
-                                        &lt;span&gt;&amp;nbsp;&lt;/span&gt;
-                                        &lt;ng-container *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar &lt;/ng-container&gt;
-                                        &lt;ng-container *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
-                                    &lt;/div&gt;
-                                  &lt;/button&gt;
-                                  &lt;button *nzSpaceItem nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                  (click)&#x3D;&quot;this.pause()&quot;
-                                  [disabled]&#x3D;&quot;!this.stopTimer &amp;&amp; !this.pauseButton || this.pauseButton&quot;
-                                  style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;&quot;&gt;
-                                  &lt;span nz-icon nzType&#x3D;&quot;pause-circle&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
-                                  Pause
-                                &lt;/button&gt;
-                                &lt;button *nzSpaceItem nz-button nzType&#x3D;&quot;primary&quot; [nzSize]&#x3D;&quot;this.size&quot;
-                                (click)&#x3D;&quot;this.stop()&quot;
-                                [disabled]&#x3D;&quot;!this.pauseButton&quot;
-                                style&#x3D;&quot;padding:0.5em; width: 6.5em; height: 3.5m;&quot;&gt;
-                                &lt;span nz-icon nzType&#x3D;&quot;save&quot; nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
-                                Detener
-                              &lt;/button&gt;
+          &lt;div class&#x3D;&quot;app-header&quot;&gt;
+            &lt;div nz-row
+              style&#x3D;&quot;text-align:right;&quot;&gt;
+              &lt;div nz-col&gt;
+                &lt;span
+                  class&#x3D;&quot;header-trigger&quot;
+                  (click)&#x3D;&quot;isCollapsed&#x3D;
+                  !isCollapsed&quot;
+                  style&#x3D;&quot;width: 100%
+                  !important;&quot;&gt;
+                  &lt;i class&#x3D;&quot;trigger&quot;
+                    nz-icon
+                    [nzType]&#x3D;&quot;isCollapsed
+                    ? &#x27;menu-unfold&#x27; :
+                    &#x27;menu-fold&#x27;&quot;&gt;&lt;/i&gt;
+                &lt;/span&gt;
+              &lt;/div&gt;
 
-                                &lt;h2 *nzSpaceItem   style&#x3D;&quot;color: #1bb; text-align: right; margin-right:0.5em;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
-                            &lt;/nz-space&gt;
-                       &lt;/span&gt;
-                      
-                    &lt;/div&gt;
-                  &lt;/div&gt;
+              &lt;div nz-col
+                style&#x3D;&quot;margin-top:0.425em;&quot;
+                [nzXs]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                [nzSm]&#x3D;&quot;{ span: 20,
+                offset: 0 }&quot;
+                [nzMd]&#x3D;&quot;{ span: 20,
+                offset: 0 }&quot;
+                [nzLg]&#x3D;&quot;{ span: 20,
+                offset: 0 }&quot;
+                [nzXl]&#x3D;&quot;{ span: 20,
+                offset: 0 }&quot;
+                [nzXXl]&#x3D;&quot;{ span: 20,
+                offset: 0 }&quot;&gt;
+                &lt;span style&#x3D;&quot;width:
+                  100%;
+                  text-align:right;&quot;&gt;
+                  &lt;nz-space
+                    [nzSize]&#x3D;&quot;12&quot;&gt;
+                    &lt;button
+                      (click)&#x3D;&quot;this.start()&quot;
+                      *nzSpaceItem
+                      nz-button
+                      nzType&#x3D;&quot;primary&quot;
+                      [nzSize]&#x3D;&quot;this.size&quot;
+                      [disabled]&#x3D;&quot;this.stopTimer&quot;
+                      style&#x3D;&quot;padding:0.5em;
+                      width: 6.5em;
+                      height: 4m;&quot;&gt;
+                      &lt;div&gt;
+                        &lt;span nz-icon
+                          nzType&#x3D;&quot;play-circle&quot;
+                          nzTheme&#x3D;&quot;outline&quot;
+                          style&#x3D;&quot;display:
+                          contents;&quot;&gt;&lt;/span&gt;
+                        &lt;span&gt;&amp;nbsp;&lt;/span&gt;
+                        &lt;ng-container
+                          *ngIf&#x3D;&quot;!this.pauseButton&quot;&gt;Iniciar
+                        &lt;/ng-container&gt;
+                        &lt;ng-container
+                          *ngIf&#x3D;&quot;this.pauseButton&quot;&gt;Resumir&lt;/ng-container&gt;
+                      &lt;/div&gt;
+                    &lt;/button&gt;
+                    &lt;button *nzSpaceItem
+                      nz-button
+                      nzType&#x3D;&quot;primary&quot;
+                      [nzSize]&#x3D;&quot;this.size&quot;
+                      (click)&#x3D;&quot;this.pause()&quot;
+                      [disabled]&#x3D;&quot;!this.stopTimer
+                      &amp;&amp;
+                      !this.pauseButton
+                      ||
+                      this.pauseButton&quot;
+                      style&#x3D;&quot;padding:0.5em;
+                      width: 6.5em;
+                      height: 3.5m;&quot;&gt;
+                      &lt;span nz-icon
+                        nzType&#x3D;&quot;pause-circle&quot;
+                        nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                      Pause
+                    &lt;/button&gt;
+                    &lt;button *nzSpaceItem
+                      nz-button
+                      nzType&#x3D;&quot;primary&quot;
+                      [nzSize]&#x3D;&quot;this.size&quot;
+                      (click)&#x3D;&quot;this.stop()&quot;
+                      [disabled]&#x3D;&quot;!this.pauseButton&quot;
+                      style&#x3D;&quot;padding:0.5em;
+                      width: 6.5em;
+                      height: 3.5m;&quot;&gt;
+                      &lt;span nz-icon
+                        nzType&#x3D;&quot;save&quot;
+                        nzTheme&#x3D;&quot;outline&quot;&gt;&lt;/span&gt;
+                      Detener
+                    &lt;/button&gt;
+
+                    &lt;h2 *nzSpaceItem
+                      style&#x3D;&quot;color:
+                      #1bb; text-align:
+                      right;
+                      margin-right:0.5em;&quot;&gt;{{this.actualTime}}&lt;/h2&gt;
+                  &lt;/nz-space&gt;
+                &lt;/span&gt;
+
+              &lt;/div&gt;
             &lt;/div&gt;
-        
+          &lt;/div&gt;
+
         &lt;/nz-header&gt;
         &lt;nz-content&gt;
-            &lt;div class&#x3D;&quot;inner-content&quot;&gt;
-                &lt;div class&#x3D;&quot;col&quot;&gt;
-                     &lt;h2   nz-col
-                     [nzXs]&#x3D;&quot;{ span: 23, offset: 1 }&quot;
-                    [nzSm]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzMd]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzLg]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                    [nzXXl]&#x3D;&quot;{ span: 0, offset: 0 }&quot;
-                     style&#x3D;&quot;color: #1bb; text-align: left; margin-left:0.5em;&quot;&gt;&lt;span style&#x3D;&quot;color:green;&quot;&gt;Emergencia actual: &lt;/span&gt;{{this.actualTime}}&lt;/h2&gt;
-                    &lt;router-outlet&gt;&lt;/router-outlet&gt;
-                    &lt;messages&gt;&lt;/messages&gt;
-                &lt;/div&gt;
-                &lt;!-- &lt;div class&#x3D;&quot;col&quot;&gt;
+          &lt;div class&#x3D;&quot;inner-content&quot;&gt;
+            &lt;div class&#x3D;&quot;col&quot;&gt;
+              &lt;h2 nz-col
+                [nzXs]&#x3D;&quot;{ span: 23,
+                offset: 1 }&quot;
+                [nzSm]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                [nzMd]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                [nzLg]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                [nzXl]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                [nzXXl]&#x3D;&quot;{ span: 0,
+                offset: 0 }&quot;
+                style&#x3D;&quot;color: #1bb;
+                text-align: left;
+                margin-left:0.5em;&quot;&gt;&lt;span
+                  style&#x3D;&quot;color:green;&quot;&gt;Emergencia
+                  actual: &lt;/span&gt;{{this.actualTime}}&lt;/h2&gt;
+              &lt;router-outlet&gt;&lt;/router-outlet&gt;
+              &lt;messages&gt;&lt;/messages&gt;
+            &lt;/div&gt;
+            &lt;!-- &lt;div class&#x3D;&quot;col&quot;&gt;
                     &lt;router-outlet name&#x3D;&quot;mensajes&quot;&gt;&lt;/router-outlet&gt;
                 &lt;/div&gt; --&gt;
-            &lt;/div&gt;
+          &lt;/div&gt;
         &lt;/nz-content&gt;
+      &lt;/nz-layout&gt;
     &lt;/nz-layout&gt;
-&lt;/nz-layout&gt;
 </code></pre>
     </div>
 
@@ -1049,7 +1178,7 @@ span.anticon {
 <script src="../js/libs/htmlparser.js"></script>
 <script src="../js/libs/deep-iterator.js"></script>
 <script>
-        var COMPONENT_TEMPLATE = '<div><nz-layout class="app-layout">    <nz-sider class="menu-sidebar" nzCollapsible nzBreakpoint="lg" [nzCollapsedWidth]="0" [(nzCollapsed)]="isCollapsed"        [nzTrigger]="null">        <div class="sidebar-logo">            <a href="https://ng.ant.design/" target="_blank">                <img src="https://ng.ant.design/assets/img/logo.svg" alt="logo">                <h1>Safe Move</h1>            </a>        </div>        <ul nz-menu nzTheme="dark" nzMode="inline" [nzInlineCollapsed]="isCollapsed">            <li nz-submenu nzOpen nzTitle="Registro" nzIcon="dashboard">                <ul>                    <li nz-menu-item nzMatchRouter style="text-decoration:none;">                        <a routerLink="/welcome">Registro</a>                    </li>                    <li nz-menu-item nzMatchRouter>                        <a routerLink="/students">Alumnos</a>                    </li>                    <li nz-menu-item nzMatchRouter>                        <a routerLink="/dashboard">Métricas</a>                    </li>                    <!-- <li nz-menu-item nzMatchRouter>                        <a>Metrics</a>                    </li> -->                </ul>            </li>            <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">                <ul>                    <li nz-menu-item nzMatchRouter>                        <a>Basic Form</a>                    </li>                </ul>            </li> -->        </ul>        <div nz-row nzJustify="center">            <div nz-col style="margin-top:2em;">                <h2 nz-typography nzType="success">Emergencia</h2>                <h2 style="color:white; text-align: center;">{{this.actualTime}}</h2>                  <div nz-col style="margin-top:0.425em;"                     [nzXs]="{ span: 22, offset: 0 }"                    [nzSm]="{ span: 0, offset: 0 }"                    [nzMd]="{ span: 0, offset: 0 }"                    [nzLg]="{ span: 0, offset: 0 }"                    [nzXl]="{ span: 0, offset: 0 }"                    [nzXXl]="{ span: 0, offset: 0 }"                    >                        <span style="width: 100%; text-align:center; margin-left:2em;">                                                           <button (click)="this.start()"   nz-button nzType="primary" [nzSize]="this.size"                                [disabled]="this.stopTimer"                                style="padding:0.5em; width: 6.5em; height: 4m; margin-bottom:1em;">                                    <div>                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>                                        <span>&nbsp;</span>                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>                                    </div>                                  </button>                                  <br/>                                  <button nz-button nzType="primary" [nzSize]="this.size"                                  (click)="this.pause()"                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"                                  style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>                                  Pause                                </button>                                  <br/>                                <button nz-button nzType="primary" [nzSize]="this.size"                                (click)="this.stop()"                                [disabled]="!this.pauseButton"                                style="padding:0.5em; width: 6.5em; height: 3.5m;  margin-bottom:1em; text-align:center; margin-left:2em;">                                <span nz-icon nzType="save" nzTheme="outline"></span>                                Detener                              </button>                                                     </span>                                          </div>            </div>        </div>    </nz-sider>    <nz-layout>        <nz-header>            <div class="app-header">                <div nz-row style="text-align:right;">                    <div nz-col>                        <span class="header-trigger" (click)="isCollapsed = !isCollapsed" style="width: 100% !important;">                            <i class="trigger" nz-icon [nzType]="isCollapsed ? \'menu-unfold\' : \'menu-fold\'"></i>                        </span>                    </div>                                        <div nz-col style="margin-top:0.425em;"                     [nzXs]="{ span: 0, offset: 0 }"                    [nzSm]="{ span: 20, offset: 0 }"                    [nzMd]="{ span: 20, offset: 0 }"                    [nzLg]="{ span: 20, offset: 0 }"                    [nzXl]="{ span: 20, offset: 0 }"                    [nzXXl]="{ span: 20, offset: 0 }"                    >                        <span style="width: 100%; text-align:right;">                            <nz-space [nzSize]="12">                                <button (click)="this.start()" *nzSpaceItem  nz-button nzType="primary" [nzSize]="this.size"                                [disabled]="this.stopTimer"                                style="padding:0.5em; width: 6.5em; height: 4m;">                                    <div>                                        <span nz-icon nzType="play-circle" nzTheme="outline" style="display: contents;" ></span>                                        <span>&nbsp;</span>                                        <ng-container *ngIf="!this.pauseButton">Iniciar </ng-container>                                        <ng-container *ngIf="this.pauseButton">Resumir</ng-container>                                    </div>                                  </button>                                  <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"                                  (click)="this.pause()"                                  [disabled]="!this.stopTimer && !this.pauseButton || this.pauseButton"                                  style="padding:0.5em; width: 6.5em; height: 3.5m;">                                  <span nz-icon nzType="pause-circle" nzTheme="outline"></span>                                  Pause                                </button>                                <button *nzSpaceItem nz-button nzType="primary" [nzSize]="this.size"                                (click)="this.stop()"                                [disabled]="!this.pauseButton"                                style="padding:0.5em; width: 6.5em; height: 3.5m;">                                <span nz-icon nzType="save" nzTheme="outline"></span>                                Detener                              </button>                                <h2 *nzSpaceItem   style="color: #1bb; text-align: right; margin-right:0.5em;">{{this.actualTime}}</h2>                            </nz-space>                       </span>                                          </div>                  </div>            </div>                </nz-header>        <nz-content>            <div class="inner-content">                <div class="col">                     <h2   nz-col                     [nzXs]="{ span: 23, offset: 1 }"                    [nzSm]="{ span: 0, offset: 0 }"                    [nzMd]="{ span: 0, offset: 0 }"                    [nzLg]="{ span: 0, offset: 0 }"                    [nzXl]="{ span: 0, offset: 0 }"                    [nzXXl]="{ span: 0, offset: 0 }"                     style="color: #1bb; text-align: left; margin-left:0.5em;"><span style="color:green;">Emergencia actual: </span>{{this.actualTime}}</h2>                    <router-outlet></router-outlet>                    <messages></messages>                </div>                <!-- <div class="col">                    <router-outlet name="mensajes"></router-outlet>                </div> -->            </div>        </nz-content>    </nz-layout></nz-layout></div>'
+        var COMPONENT_TEMPLATE = '<div><nz-layout class="app-layout">  <nz-sider class="menu-sidebar"    nzCollapsible nzBreakpoint="lg"    [nzCollapsedWidth]="0"    [(nzCollapsed)]="isCollapsed"    [nzTrigger]="null">    <div class="sidebar-logo">      <a href="https://ng.ant.design/"        target="_blank">        <img          src="https://ng.ant.design/assets/img/logo.svg"          alt="logo">        <h1>Safe Move</h1>      </a>    </div>    <ul nz-menu nzTheme="dark"      nzMode="inline"      [nzInlineCollapsed]="isCollapsed">      <li nz-submenu nzOpen        nzTitle="Registro"        nzIcon="dashboard">        <ul>          <li nz-menu-item nzMatchRouter            style="text-decoration:none;">            <a href="/welcome">Registro</a>          </li>          <li nz-menu-item            nzMatchRouter>            <a href="/students">Alumnos</a>          </li>          <li nz-menu-item            nzMatchRouter>            <a href="/dashboard">Métricas</a>          </li>          <li nz-menu-item            nzMatchRouter>            <a href="/students">SW</a>          </li>          <li nz-menu-item            nzMatchRouter>            <a href="/students"              target="_blank">SW Tab</a>          </li>          <!-- <li nz-menu-item nzMatchRouter>                        <a>Metrics</a>                    </li> -->        </ul>      </li>      <!-- <li nz-submenu nzOpen nzTitle="Form" nzIcon="form">                <ul>                    <li nz-menu-item nzMatchRouter>                        <a>Basic Form</a>                    </li>                </ul>            </li> -->    </ul>    <div nz-row nzJustify="center">      <div nz-col        style="margin-top:2em;">        <h2 nz-typography          nzType="success">Emergencia</h2>        <h2 style="color:white;          text-align: center;">{{this.actualTime}}</h2>        <div nz-col          style="margin-top:0.425em;"          [nzXs]="{ span: 22, offset: 0          }"          [nzSm]="{ span: 0, offset: 0          }"          [nzMd]="{ span: 0, offset: 0          }"          [nzLg]="{ span: 0, offset: 0          }"          [nzXl]="{ span: 0, offset: 0          }"          [nzXXl]="{ span: 0, offset: 0          }">          <span style="width: 100%;            text-align:center;            margin-left:2em;">            <button              (click)="this.start()"              nz-button nzType="primary"              [nzSize]="this.size"              [disabled]="this.stopTimer"              style="padding:0.5em;              width: 6.5em; height: 4m;              margin-bottom:1em;">              <div>                <span nz-icon                  nzType="play-circle"                  nzTheme="outline"                  style="display:                  contents;"></span>                <span>&nbsp;</span>                <ng-container                  *ngIf="!this.pauseButton">Iniciar                </ng-container>                <ng-container                  *ngIf="this.pauseButton">Resumir</ng-container>              </div>            </button>            <br/>              <button nz-button                nzType="primary"                [nzSize]="this.size"                (click)="this.pause()"                [disabled]="!this.stopTimer                && !this.pauseButton ||                this.pauseButton"                style="padding:0.5em;                width: 6.5em; height:                3.5m; margin-bottom:1em;                text-align:center;                margin-left:2em;">                <span nz-icon                  nzType="pause-circle"                  nzTheme="outline"></span>                Pause              </button>              <br/>                <button nz-button                  nzType="primary"                  [nzSize]="this.size"                  (click)="this.stop()"                  [disabled]="!this.pauseButton"                  style="padding:0.5em;                  width: 6.5em; height:                  3.5m;                  margin-bottom:1em;                  text-align:center;                  margin-left:2em;">                  <span nz-icon                    nzType="save"                    nzTheme="outline"></span>                  Detener                </button>              </span>            </div>          </div>        </div>      </nz-sider>      <nz-layout>        <nz-header>          <div class="app-header">            <div nz-row              style="text-align:right;">              <div nz-col>                <span                  class="header-trigger"                  (click)="isCollapsed=                  !isCollapsed"                  style="width: 100%                  !important;">                  <i class="trigger"                    nz-icon                    [nzType]="isCollapsed                    ? \'menu-unfold\' :                    \'menu-fold\'"></i>                </span>              </div>              <div nz-col                style="margin-top:0.425em;"                [nzXs]="{ span: 0,                offset: 0 }"                [nzSm]="{ span: 20,                offset: 0 }"                [nzMd]="{ span: 20,                offset: 0 }"                [nzLg]="{ span: 20,                offset: 0 }"                [nzXl]="{ span: 20,                offset: 0 }"                [nzXXl]="{ span: 20,                offset: 0 }">                <span style="width:                  100%;                  text-align:right;">                  <nz-space                    [nzSize]="12">                    <button                      (click)="this.start()"                      *nzSpaceItem                      nz-button                      nzType="primary"                      [nzSize]="this.size"                      [disabled]="this.stopTimer"                      style="padding:0.5em;                      width: 6.5em;                      height: 4m;">                      <div>                        <span nz-icon                          nzType="play-circle"                          nzTheme="outline"                          style="display:                          contents;"></span>                        <span>&nbsp;</span>                        <ng-container                          *ngIf="!this.pauseButton">Iniciar                        </ng-container>                        <ng-container                          *ngIf="this.pauseButton">Resumir</ng-container>                      </div>                    </button>                    <button *nzSpaceItem                      nz-button                      nzType="primary"                      [nzSize]="this.size"                      (click)="this.pause()"                      [disabled]="!this.stopTimer                      &&                      !this.pauseButton                      ||                      this.pauseButton"                      style="padding:0.5em;                      width: 6.5em;                      height: 3.5m;">                      <span nz-icon                        nzType="pause-circle"                        nzTheme="outline"></span>                      Pause                    </button>                    <button *nzSpaceItem                      nz-button                      nzType="primary"                      [nzSize]="this.size"                      (click)="this.stop()"                      [disabled]="!this.pauseButton"                      style="padding:0.5em;                      width: 6.5em;                      height: 3.5m;">                      <span nz-icon                        nzType="save"                        nzTheme="outline"></span>                      Detener                    </button>                    <h2 *nzSpaceItem                      style="color:                      #1bb; text-align:                      right;                      margin-right:0.5em;">{{this.actualTime}}</h2>                  </nz-space>                </span>              </div>            </div>          </div>        </nz-header>        <nz-content>          <div class="inner-content">            <div class="col">              <h2 nz-col                [nzXs]="{ span: 23,                offset: 1 }"                [nzSm]="{ span: 0,                offset: 0 }"                [nzMd]="{ span: 0,                offset: 0 }"                [nzLg]="{ span: 0,                offset: 0 }"                [nzXl]="{ span: 0,                offset: 0 }"                [nzXXl]="{ span: 0,                offset: 0 }"                style="color: #1bb;                text-align: left;                margin-left:0.5em;"><span                  style="color:green;">Emergencia                  actual: </span>{{this.actualTime}}</h2>              <router-outlet></router-outlet>              <messages></messages>            </div>            <!-- <div class="col">                    <router-outlet name="mensajes"></router-outlet>                </div> -->          </div>        </nz-content>      </nz-layout>    </nz-layout></div>'
     var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'FormStatusComponent', 'selector': 'app-form-status'},{'name': 'ListStudentsComponent', 'selector': 'app-list-students'},{'name': 'LoadingComponent', 'selector': 'loading'},{'name': 'MessagesComponent', 'selector': 'app-messages'},{'name': 'MessagesComponent', 'selector': 'messages'},{'name': 'MetricsStudentsComponent', 'selector': 'app-metrics-students'},{'name': 'PureLoadingComponent', 'selector': 'app-pure-loading'},{'name': 'QrCodeComponent', 'selector': 'qr-code'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'StudentComponent', 'selector': 'app-student'},{'name': 'WelcomeComponent', 'selector': 'app-welcome'}];
     var DIRECTIVES = [];
     var ACTUAL_COMPONENT = {'name': 'AppComponent'};
