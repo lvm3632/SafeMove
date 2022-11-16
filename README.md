@@ -8,9 +8,12 @@
 ---
 
 <p align="center"> Guarda y registra alumnos en caso de una emergencia
-    <br> 
 </p>
 
+<p align="center">
+<a align="center" href="Documentación completa en: https://lvm3632.github.io/SafeMove-Documentation/">Documentación completa (Clic aquí)</a>
+ </p>
+ 
 ## 📝 Table of Contents
 - [About](#about)
 - [Getting Started](#getting_started)
@@ -84,6 +87,8 @@ node server.js
 
 ## 🗎 Documentation <a name = "documentation"></a>
 La aplicación usa ant-design como principal framework de customización y diseño de componentes (https://ng.ant.design/docs/introduce/en), y es código abierto. También usado por Alibaba e instancias de Apache.
+
+
 ### Dependencies
 Librerías necesarias al momento del lanzamiento de la última **versión 1.0.0**
 
@@ -156,7 +161,7 @@ Si se quiere desplegar en un servidor como linux, es necesario desplegarlo en un
 - Local Storage
 - Reactive style paradigm (using RxJS, stateful in overall)
 ## ⛏️ Built Using <a name = "built_using"></a>
-- [Angular](https://angular.io/) - Database
+- [Angular](https://angular.io/) - Platform Frontend
 - [Express](https://expressjs.com/) - Server Framework
 - [NodeJs](https://nodejs.org/en/) - Server Environment
 - [NgZorro](https://ng.ant.design/docs/introduce/en) - Ant design framework frontend
